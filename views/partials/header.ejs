@@ -8,11 +8,11 @@
   </head>
   <body>
     <nav>
-      <img src="/images/sync-32.png">
+      <a href="/" id="logo"><img src="/images/sync-32.png"></a>
       <% if (user) { %>
         <a href="/logout" class="login">LOG OUT</a>
       <% } else { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="/images/btn_google_signin_light_normal_web.png"></a>
+        <a href="/auth/google" class="login"><img src="/images/btn_google_signin_light_normal_web.png"></a>
       <% } %>
     </nav>
       <main>
