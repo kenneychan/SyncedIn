@@ -8,15 +8,15 @@
 
 ## Wireframes
 
-![Image](/pictures/HomePage.png)
-![Image](/pictures/JobInfo.png)
-![Image](/pictures/Jobs.png)
-![Image](/pictures/JobSeekerInfo.png)
-![Image](/pictures/JobSeekers.jpg)
+![Image](/public/images/HomePage.png)
+![Image](/public/images/JobInfo.png)
+![Image](/public/images/Jobs.png)
+![Image](/public/images/JobSeekerInfo.png)
+![Image](/public/images/JobSeekers.jpg)
 
 ## ERD
 
-![Image](/pictures/SyncedIn.png)
+![Image](/public/images/SyncedIn.png)
 
 ## Technology Used
 [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
