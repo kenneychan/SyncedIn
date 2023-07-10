@@ -8,7 +8,15 @@
 
 ## Wireframes
 
+![Image](/pictures/HomePage.png)
+![Image](/pictures/JobInfo.png)
+![Image](/pictures/Jobs.png)
+![Image](/pictures/JobSeekerInfo.png)
+![Image](/pictures/JobSeekers.jpg)
+
 ## ERD
+
+![Image](/pictures/SyncedIn.png)
 
 ## Technology Used
 [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
