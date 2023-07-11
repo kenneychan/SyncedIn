@@ -1,0 +1,23 @@
+<%- include('./partials/header') %>
+
+<container
+  ><img
+    alt="avatar"
+    src="<%= user.userAvatar %>"
+    referrerpolicy="no-referrer"
+  /><%= user.userName %></container
+>
+
+<container
+  ><h2>About</h2>
+  <p>Brand Statement</p></container
+>
+
+<container
+  ><h2>Skills</h2>
+  user.skills.forEach(function(s){
+    <p><%= s %></p>
+  })</container
+>
+
+<%- include('./partials/footer') %>
