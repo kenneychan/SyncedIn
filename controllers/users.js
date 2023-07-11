@@ -1,13 +1,13 @@
 const User = require("../models/user");
 
 module.exports = {
-  showSeekerProfile,
+  showUserProfile,
 };
 
-async function showSeekerProfile(req, res) {
+async function showUserProfile(req, res) {
   const user = await User.findById(req.user._id);
-  res.render("seekers/profile", {
-    title: "Seeker Profile",
+  res.render("users/profile", {
+    title: "User Profile",
     user,
   });
 }

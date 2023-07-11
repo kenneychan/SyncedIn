@@ -8,6 +8,6 @@ router.get("/", function (req, res, next) {
   res.send("respond with a resource");
 });
 
-router.get("/seekers/profile", ensureLoggedIn, usersCtrl.showSeekerProfile);
+router.get("/users/profile", ensureLoggedIn, usersCtrl.showUserProfile);
 
 module.exports = router;
