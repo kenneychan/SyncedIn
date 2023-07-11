@@ -1,0 +1,48 @@
+<%- include('../partials/header') %>
+
+<h2>Users List</h2>
+<table>
+  <thead>
+    <tr>
+      <th data-sort="string">Name</th>
+      <th>GoogleId</th>
+      <th>eMail</th>
+      <th>Seeker</th>
+      <th>Poster</th>
+      <th>Admin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach (function (u) { %>
+    <tr>
+      <td class="review-user">
+        <img
+          alt="avatar"
+          src="<%= u.avatar %>"
+          referrerpolicy="no-referrer"
+        /><%= u.name %>
+      </td>
+      <td><%= u.googleId %></td>
+      <td><%= u.email %></td>
+      <form action="/users/<%= u._id %>" method="POST">
+
+        <td>
+          <input type="checkbox" class="role" name="roleSeeker" <%=
+          u.roleSeeker ? 'checked' : ''%>/> Seeker
+        </td>
+        <td>
+          <input type="checkbox" class="role" name="rolePoster" <%=
+          u.rolePoster ? 'checked' : ''%>/>Poster
+        </td>
+        <td>
+          <input type="checkbox" class="role" name="roleAdmin" <%=
+          u.roleAdmin ? 'checked' : ''%>/>Admin
+        </td>
+        <td><button>Update</button></td>
+      </form>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
