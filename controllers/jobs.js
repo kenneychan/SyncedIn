@@ -1,8 +1,10 @@
+
 var Job = require('../models/job');
 
 module.exports = {
     index, 
     new: newJob,
+
     create
 };
 
@@ -18,4 +20,5 @@ async function index(req, res) {
   async function create(req, res){
     await Job.create(req.body);
     res.redirect('/jobs');
+
 }
