@@ -1,11 +1,19 @@
+const ROLE = {
+  ADMIN: "roleAdmin",
+  SEEKER: "roleSeeker",
+  POSTER: "rolePoster",
+};
+
 const User = require("../models/user");
 
 module.exports = {
+  ROLE,
   index,
   update,
 };
 
 async function index(req, res) {
+  console.log("user index");
   res.render("users/index", {
     title: "Users",
     users: await User.find(),
