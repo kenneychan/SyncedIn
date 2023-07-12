@@ -10,16 +10,18 @@
 >
 <br /><br />
 
+<h2 class="h2">About</h2>
+
 <% if (user.about) { %>
   <div>
-  <h2>About</h2>
   <p><%= user.about %></p>
+  <button id="bioEditButton" class="btn btn-primary">Edit</button>
   </div>
 <% } %>
 
-<form action="/users/profile/update" method="POST">
-  <label for="about" class="h2">About</label>
-  <br>
+<br><br>
+
+<form id="bioEditForm" action="/users/profile/update" method="POST" <% if (user.about) { %>style="display: none;"<% } %>>
   <div class="input-group border border-dark rounded">
     <textarea
       name="about"
@@ -31,5 +33,7 @@
   <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
 
 <%- include('../partials/footer') %>
