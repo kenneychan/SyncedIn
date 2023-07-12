@@ -13,7 +13,7 @@ router.get(
   usersCtrl.index
 );
 
-router.get("/users/profile", ensureLoggedIn, usersCtrl.showUserProfile);
+router.get("/profile", ensureLoggedIn, usersCtrl.showUserProfile);
 
 router.put("/:id", ensureLoggedIn, usersCtrl.update);
 
