@@ -1,13 +1,35 @@
 <%- include('../partials/header') %>
 
-<container
-  ><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" /><%=
-  user.name %></container
+<container class="container"
+  ><img
+    alt="avatar"
+    src="<%= user.avatar %>"
+    referrerpolicy="no-referrer"
+    class="rounded-circle"
+  />&nbsp; &nbsp; | &nbsp; &nbsp;<%= user.name %></container
 >
+<br /><br />
 
-<container
-  ><h2>About</h2>
-  <p>Brand Statement</p></container
->
+<% if (user.about) { %>
+  <div>
+  <h2>About</h2>
+  <p><%= user.about %></p>
+  </div>
+<% } %>
+
+<form action="/users/profile/update" method="POST">
+  <label for="about" class="h2">About</label>
+  <br>
+  <div class="input-group border border-dark rounded">
+    <textarea
+      name="about"
+      class="form-control"
+      aria-label="With textarea"
+      placeholder="Biography or Brand Statement"
+    ></textarea>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 <%- include('../partials/footer') %>

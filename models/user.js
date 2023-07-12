@@ -10,18 +10,19 @@ const userSchema = new Schema(
     },
     email: String,
     avatar: String,
+    about: String,
     roleSeeker: Boolean,
     rolePoster: Boolean,
     roleAdmin: Boolean,
     seeker: {
       type: Schema.Types.ObjectId,
       ref: "Seeker",
-      required: true,
+      // required: true,
     },
     employer: {
       type: Schema.Types.ObjectId,
       ref: "Employer",
-      required: true,
+      // required: true,
     },
   },
   {
