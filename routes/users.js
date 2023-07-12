@@ -21,4 +21,6 @@ router.get("/seekers", ensureLoggedIn, usersCtrl.showSeekers);
 
 router.get("/:id", ensureLoggedIn, usersCtrl.show);
 
+router.post("/profile/update", ensureLoggedIn, usersCtrl.updateProfile);
+
 module.exports = router;
