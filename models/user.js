@@ -13,6 +13,16 @@ const userSchema = new Schema(
     roleSeeker: Boolean,
     rolePoster: Boolean,
     roleAdmin: Boolean,
+    seeker: {
+      type: Schema.Types.ObjectId,
+      ref: "Seeker",
+      required: true,
+    },
+    employer: {
+      type: Schema.Types.ObjectId,
+      ref: "Employer",
+      required: true,
+    },
   },
   {
     timestamps: true,
