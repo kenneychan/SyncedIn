@@ -13,4 +13,4 @@ const seekerSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("Seeker", seekerSchema);
+module.exports = seekerSchema;
