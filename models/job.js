@@ -9,7 +9,7 @@ const jobSchema = new Schema({
     Location: String,
     StartDate: String,
     Wage: {
-    type: Number,
+    type: String,
     enum: ['$50,000-$75,000', '$75,000-$100,000', '$100,000-$125,000', 
     '$125,000-$155,000', '$150,000-$175,000', '$175,000-$200,000', '$200,000-$250,000+',]
 }

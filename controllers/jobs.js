@@ -1,4 +1,4 @@
-var Job = require('../models/user');
+var Job = require('../models/job');
 
 module.exports = {
     index, 
