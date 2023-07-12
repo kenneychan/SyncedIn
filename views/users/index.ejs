@@ -24,7 +24,7 @@
       </td>
       <td><%= u.googleId %></td>
       <td><%= u.email %></td>
-      <form action="/users/<%= u._id %>" method="POST">
+      <form action="/users/<%= u._id %>?_method=PUT" method="POST">
 
         <td>
           <input type="checkbox" class="role" name="roleSeeker" <%=
