@@ -15,3 +15,13 @@ body {
 a {
   color: #00b7ff;
 }
+
+.review-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-user img {
+  border-radius: 50%;
+  height: 40px;
