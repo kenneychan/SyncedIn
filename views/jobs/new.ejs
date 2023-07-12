@@ -3,18 +3,20 @@
 <h1>Add New Job Listing</h1>
 
 <form id="new-form" action="/jobs" method="POST">
+    <label> Company: </label>
+    <input type="text" name="company">
     <label> Title: </label>
-    <input type="text" name="Title">
+    <input type="text" name="title">
     <label>Description: </label>
-    <input type="text" name="Description">
+    <input type="text" name="description">
     <label> Skills: </label>
-    <input type="text" name="Skills">
+    <input type="text" name="skills">
     <label> Location: </label>
-    <input type="text" name="Location">
+    <input type="text" name="location">
     <label>Start Date: </label>
-    <input type="text" name="StartDate">
+    <input type="text" name="startDate">
     <label> Salary: </label>
-    <select name="Wage">
+    <select name="wage">
         <option value="$50,000-$75,000">$50,000-$75,000</option>
         <option value="$75,000-$100,000">$75,000-$100,000</option>
         <option value="$100,000-$125,000">$100,000-$125,000</option>

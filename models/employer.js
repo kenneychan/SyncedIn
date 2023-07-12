@@ -11,4 +11,4 @@ const employerSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("Employer", employerSchema);
+module.exports = employerSchema;

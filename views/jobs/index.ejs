@@ -10,14 +10,14 @@
           <div class="d-flex flex-row align-items-center">
             <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
             <div class="ms-2 c-details">
-              <h6 class="mb-0"><%= job.Title %></h6>
-              <span><%= job.StartDate %> </span>
+              <h6 class="mb-0"><%= job.company %></h6>
+              <span><%= job.startDate %> </span>
             </div>
           </div>
-          <div class="badge"> <span><%= job.Skills %></span> </div>
+          <!-- <div class="skills"> <span><%= job.skills %></span> </div> -->
         </div>
         <div class="mt-5">
-          <h3 class="heading"><%= job.Description %><br><%= job.Location %></h3>
+          <h4 class="heading"><%= job.title %><br><%= job.location %></h4>
           <div class="mt-5">
             <div><a href="/jobs/<%= job._id %>">Details</a></div>
             

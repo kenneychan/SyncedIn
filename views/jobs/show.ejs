@@ -1,0 +1,22 @@
+<%- include('../partials/header', { title: 'Job Details' }) %>
+
+<h1>Job Details</h1>
+
+<section id="show-page">
+  <div>Company:</div>
+  <div><%= job.company %></div>
+  <div>Title:</div>
+  <div><%= job.title %></div>
+  <div>Salary:</div>
+  <div><%= job.wage %></div>
+  <div>Location:</div>
+  <div><%= job.location %></div>
+  <div>Start Date:</div>
+  <div><%= job.startDate %></div>
+  <div>Description:</div>
+  <div><%= job.description %></div>
+  <div>Skills:</div>
+  <div><%= job.Skills %></div>
+
+  <%- include('../partials/footer') %>
+</section>
