@@ -12,7 +12,20 @@ module.exports = {
   index,
   update,
   showSeekers,
+  show,
 };
+
+async function show(req, res) {
+  const user = await User.findById(req.params.id);
+  if (!user) {
+    res.redirect("/users");
+  } else {
+    res.render("users/show", {
+      title: "User Details",
+      user,
+    });
+  }
+}
 
 async function showSeekers(req, res) {
   const users = await User.find({

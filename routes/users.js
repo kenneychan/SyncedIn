@@ -17,6 +17,8 @@ router.get("/profile", ensureLoggedIn, usersCtrl.showUserProfile);
 
 router.put("/:id", ensureLoggedIn, usersCtrl.update);
 
-router.get("/:seekers", ensureLoggedIn, usersCtrl.showSeekers);
+router.get("/seekers", ensureLoggedIn, usersCtrl.showSeekers);
+
+router.get("/:id", ensureLoggedIn, usersCtrl.show);
 
 module.exports = router;
