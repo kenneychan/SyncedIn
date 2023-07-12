@@ -1,10 +1,19 @@
 <%- include('../partials/header') %>
 
-<container
-  ><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" /><%=
-  user.name %></container
->
+<div class="container"></div>
+  <img
+    alt="avatar"
+    src="<%= user.avatar %>"
+    referrerpolicy="no-referrer"
+    class="rounded-circle"
+  />&nbsp; &nbsp; | &nbsp; &nbsp;<%= user.name %>
+</div>
 
-<h2>User Profile</h2>
+<br><br>
 
+<h2 class="h2">About</h2>
+
+<div>
+  <p><%= user.about %></p>
+</div>
 <%- include('../partials/footer') %>
