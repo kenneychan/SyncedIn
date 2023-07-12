@@ -10,6 +10,9 @@ const userSchema = new Schema(
     },
     email: String,
     avatar: String,
+    roleSeeker: Boolean,
+    rolePoster: Boolean,
+    roleAdmin: Boolean,
   },
   {
     timestamps: true,

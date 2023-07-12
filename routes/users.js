@@ -1,13 +1,20 @@
 var express = require("express");
 var router = express.Router();
-var usersCtrl = require("../controllers/users");
-var ensureLoggedIn = require("../config/ensureLoggedIn");
+const ensureLoggedIn = require("../config/ensureLoggedIn");
+const checkUserRole = require("../config/checkUserRole");
+// create controller module
+const usersCtrl = require("../controllers/users");
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
-  res.send("respond with a resource");
-});
+router.get(
+  "/",
+  ensureLoggedIn,
+  checkUserRole.authRole(usersCtrl.ROLE.ADMIN),
+  usersCtrl.index
+);
 
 router.get("/profile", ensureLoggedIn, usersCtrl.showUserProfile);
+
+router.put("/:id", ensureLoggedIn, usersCtrl.update);
 
 module.exports = router;
