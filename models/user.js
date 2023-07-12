@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Seeker = require("./seeker");
-const Employer = require("./employer");
+const SeekerSchema = require("./seeker");
+const EmployerSchema = require("./employer");
 
 const userSchema = new Schema(
   {
@@ -16,12 +16,10 @@ const userSchema = new Schema(
     rolePoster: Boolean,
     roleAdmin: Boolean,
     seeker: {
-      type: Schema.Types.ObjectId,
-      ref: "Seeker",
+      type: SeekerSchema,
     },
     employer: {
-      type: Schema.Types.ObjectId,
-      ref: "Employer",
+      type: EmployerSchema,
     },
   },
   {
