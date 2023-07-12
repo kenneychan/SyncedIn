@@ -32,7 +32,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/users/profile">Job-Seekers</a>
+              <a class="nav-link" href="/users/seekers">Job-Seekers</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/jobs">Jobs</a>
@@ -58,7 +58,7 @@
             </li>
           </ul>
         </div>
-        <% if (user) { %>
+        <% if (user) { %><a class="nav-link" href="/users/profile">Profile</a> &nbsp; &nbsp; | &nbsp; &nbsp;
         <a href="/logout" class="login nav-link">Log Out</a>
         <% } else { %>
         <a href="/auth/google" class="login nav-link"
