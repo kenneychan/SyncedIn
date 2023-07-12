@@ -12,6 +12,7 @@ const userSchema = new Schema(
     },
     email: String,
     avatar: String,
+    about: String,
     roleSeeker: Boolean,
     rolePoster: Boolean,
     roleAdmin: Boolean,

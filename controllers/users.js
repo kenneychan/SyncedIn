@@ -13,7 +13,16 @@ module.exports = {
   update,
   showSeekers,
   show,
+  updateProfile,
 };
+
+async function updateProfile(req, res) {
+  const user = await User.findById(req.user._id);
+  const about = req.body.about;
+  user.about = about;
+  await user.save();
+  res.redirect("/users/profile");
+}
 
 async function show(req, res) {
   const user = await User.findById(req.params.id);
