@@ -11,5 +11,8 @@ router.get('/', syncCtrl.index);
 router.get('/new', syncCtrl.new);
 // Create job posting
 router.post('/', syncCtrl.create);
+// show detials for job post
 router.get('/:id', syncCtrl.show);
+// delete job
+router.delete('/:id', syncCtrl.delete);
 module.exports = router;
