@@ -4,13 +4,15 @@ const User = require("./user");
 const Schema = mongoose.Schema;
 
 const jobSchema = new Schema({
-  company: String,
-  title: String,
-  descriptionescription: String,
-  skills: String,
-  location: String,
-  startDate: String,
-  wage: {
+    avatar: String,
+    company: String,
+    title: String,
+    description: String,
+    skills: String,
+    location: String,
+    startDate: String,
+    wage: {
+
     type: String,
     enum: [
       "$50,000-$75,000",

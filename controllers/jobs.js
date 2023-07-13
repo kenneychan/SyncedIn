@@ -9,6 +9,8 @@ module.exports = {
   create,
   show,
   delete: deleteJob,
+  update,
+  edit,
   jobsByPoster,
   seekers,
 };
@@ -118,6 +120,54 @@ async function deleteJob(req, res) {
     // Job not found
     return res.status(404).json({ message: "Job not found" });
   }
-  res.redi;
-  rect("/jobs");
+  res.redirect("/jobs");
+}
+
+async function update(req, res) {
+  const jobId = req.params.id; // Get the job ID from the request parameters
+  try {
+    const updateJob = await Job.findByIdAndUpdate(
+      jobId,
+      {
+        title: req.body.title,
+        description: req.body.description,
+        skills: req.body.skills,
+        location: req.body.location,
+        startDate: req.body.startDate,
+        wage: req.body.wage,
+      },
+      { new: true }
+    );
+
+    if (!updateJob) {
+      // Job not found
+      return res.status(404).json({ message: "Job not found" });
+    }
+
+    res.redirect("/jobs");
+  } catch (error) {
+    // Handle any errors that occurred during the update process
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+}
+
+async function edit(req, res) {
+  try {
+    const jobId = req.params.id; // Get the job ID from the request parameters
+    // Fetch the job from the database based on the job ID
+    const job = await Job.findById(jobId);
+
+    if (!job) {
+      // Job not found
+      return res.status(404).json({ message: "Job not found" });
+    }
+
+    res.render("jobs/edit", { title: "Edit Page", job });
+  } catch (error) {
+    // Handle any errors that occurred during the fetching process
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+
 }
