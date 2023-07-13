@@ -15,6 +15,7 @@ module.exports = {
   showSeekers,
   show,
   updateProfile,
+  delete: deleteProfile,
 };
 
 async function updateProfile(req, res) {
@@ -86,4 +87,21 @@ async function update(req, res) {
   }
   await user.save();
   res.redirect("/users");
+}
+
+async function deleteProfile(req, res) {
+  try {
+    await User.findByIdAndDelete(req.user._id);
+    // Clear the session and remove the user from the session
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Error destroying session:", err);
+      }
+    });
+    res.redirect("/"); // Redirect to the logout page
+  } catch (error) {
+    // Handle the error appropriately
+    console.error("Error deleting user:", error);
+    res.redirect("/users/profile"); // Redirect back to the profile page or show an error page
+  }
 }
