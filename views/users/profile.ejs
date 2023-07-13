@@ -34,6 +34,25 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+<% if (user.seeker?.skills) { %>
+  <div>
+  <p><%= user.seeker.skills %></p>
+  <button id="skillsEditButton" class="btn btn-primary">Edit</button>
+  </div>
+<% } %>
 
+<form id="skillsEditForm" action="/users/profile/update" method="POST" <% if (user.seeker?.skills) { %>style="display: none;"<% } %>>
+ <label for="skills">Skills</label>
+  <div class="input-group border border-dark rounded">
+    <textarea
+      name="skills"
+      class="form-control"
+      aria-label="With textarea"
+      placeholder="Separate each skill with a comma!"
+    ></textarea>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 <%- include('../partials/footer') %>

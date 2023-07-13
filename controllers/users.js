@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Seeker = require("../models/seeker");
 
 const ROLE = {
   ADMIN: "roleAdmin",
@@ -19,7 +20,10 @@ module.exports = {
 async function updateProfile(req, res) {
   const user = await User.findById(req.user._id);
   const about = req.body.about;
+  const skills = req.body.skills;
   user.about = about;
+  user.seeker.skills = skills;
+
   await user.save();
   res.redirect("/users/profile");
 }
