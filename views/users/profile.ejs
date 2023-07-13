@@ -41,7 +41,7 @@
   </div>
 <% } %>
 
-<form id="skillsEditForm" action="/users/profile/update" method="POST" <% if (user.seeker?.skills) { %>style="display: none;"<% } %>>
+<form id="skillsEditForm" <% if (!user.seeker?.skills) { %> action="/users/profile/update?_method=PUT" method="POST" <% } %> <% if (user.seeker?.skills ) { %> action="/users/profile/update" method="POST" <% } %> <% if (user.seeker?.skills) { %>style="display: none;"<% } %>>
  <label for="skills">Skills</label>
   <div class="input-group border border-dark rounded">
     <textarea

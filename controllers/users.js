@@ -21,8 +21,18 @@ async function updateProfile(req, res) {
   const user = await User.findById(req.user._id);
   const about = req.body.about;
   const skills = req.body.skills;
-  user.about = about;
-  user.seeker.skills = skills;
+
+  if (!user.seeker) {
+    user.seeker = {};
+  }
+
+  if (about) {
+    user.about = about;
+  }
+
+  if (skills) {
+    user.seeker.skills = skills;
+  }
 
   await user.save();
   res.redirect("/users/profile");
