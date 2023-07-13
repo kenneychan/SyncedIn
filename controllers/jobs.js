@@ -23,6 +23,15 @@ async function index(req, res) {
         );
       }
     });
+    jobs.sort((a, b) => {
+      if (a.heatmap < b.heatmap) {
+        return 1;
+      } else if (a.heatmap > b.heatmap) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
   }
   res.render("jobs/index", { title: "All Jobs", jobs });
 }
