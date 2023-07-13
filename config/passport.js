@@ -24,7 +24,10 @@ passport.use(
           name: profile.displayName,
           googleId: profile.id,
           email: profile.emails[0].value,
-          avatar: profile.photos[0].value,
+          roleAdmin: true,
+          rolePoster: true,
+          roleSeeker: true,
+          seeker: { skills: "javascript, html, css, bootstrap" },
         });
         return cb(null, user);
       } catch (err) {

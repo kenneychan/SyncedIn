@@ -2,12 +2,24 @@ const UserSchema = require("../../models/user");
 
 module.exports = {
   match,
+  matchHeatmap,
 };
 
-function match(seekerSkills, jobSkills, topN) {
+match("javascript, html, css, express, restful", "java, ejb, express");
+
+function matchHeatmap(seekerSkills, jobSkills, topN) {
+  const closeness = match(seekerSkills, jobSkills);
+  let sum = 0;
+  const minLengthAndTopN = Math.min(topN, closeness.length);
+  for (let jobIndex = 0; jobIndex < minLengthAndTopN; jobIndex++) {
+    sum += closeness[jobIndex].closeness;
+  }
+  return Math.ceil(100 * (sum / minLengthAndTopN));
+}
+
+function match(seekerSkills, jobSkills) {
   jobSkills = jobSkills.split(",");
   seekerSkills = seekerSkills.split(",");
-
   const jobMatches = jobSkills.map((jobSkill) => {
     // find the top matching seeker skill
     const similarities = seekerSkills.map((seekerSkill) => {
@@ -29,7 +41,8 @@ function match(seekerSkills, jobSkills, topN) {
       return 0;
     }
   });
-  console.log("jobMatches", jobMatches);
+  // console.log("jobMatches", jobMatches);
+  return jobMatches;
 }
 
 // https://stackoverflow.com/questions/11301438/return-index-of-greatest-value-in-an-array

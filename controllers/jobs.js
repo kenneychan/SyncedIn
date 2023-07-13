@@ -1,4 +1,5 @@
-var Job = require("../models/job");
+const Job = require("../models/job");
+const skillsMatching = require("./utils/skillsMatching");
 
 module.exports = {
   index,
@@ -8,8 +9,21 @@ module.exports = {
   delete: deleteJob,
 };
 
+const TOPN = 5;
+
 async function index(req, res) {
   const jobs = await Job.find({});
+  if (req.user && req.user.seeker && req.user.seeker.skills) {
+    jobs.map((job) => {
+      if (job.skills) {
+        job.heatmap = skillsMatching.matchHeatmap(
+          req.user.seeker.skills,
+          job.skills,
+          TOPN
+        );
+      }
+    });
+  }
   res.render("jobs/index", { title: "All Jobs", jobs });
 }
 
@@ -41,5 +55,4 @@ async function deleteJob(req, res) {
     return res.status(404).json({ message: "Job not found" });
   }
   res.redirect("/jobs");
-
 }
