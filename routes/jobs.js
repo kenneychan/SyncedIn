@@ -19,4 +19,5 @@ router.get("/:id/edit", ensureLoggedIn, syncCtrl.edit);
 // update job
 router.put("/:id", ensureLoggedIn, syncCtrl.update);
 
+
 module.exports = router;
