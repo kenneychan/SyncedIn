@@ -58,6 +58,24 @@ async function create(req, res) {
 
 async function show(req, res) {
   try {
+    const user = await User.findById(req.user._id);
+    console.log("user", user.seeker.skills);
+    const job = await Job.findById(req.params.id);
+
+    const heatmap = skillsMatching.match(user.seeker.skills, job.skills);
+    heatmap.map((skill) => {
+      skill.closeness = Math.ceil(100 * skill.closeness);
+    });
+
+    res.render("jobs/show", { job, heatmap });
+  } catch (err) {
+    console.log(err);
+    res.render("error", { message: err.message, error: err });
+  }
+}
+
+async function showByJob(req, res) {
+  try {
     const job = await Job.findById(req.params.id);
     res.render("jobs/show", { job });
   } catch (err) {
@@ -76,14 +94,12 @@ async function seekers(req, res) {
 
     users.map((user) => {
       if (user.seeker && user.seeker.skills) {
-        const heatmap = skillsMatching.matchHeatmap(
+        user.heatmap = heatmap = skillsMatching.matchHeatmap(
           user.seeker.skills,
           job.skills,
           TOPN
         );
-        user.heatmap = heatmap;
-        user.silly = "silly";
-        user.sillynumber = 0;
+        user.jobid = req.params.id;
       }
     });
 
@@ -106,6 +122,7 @@ async function seekers(req, res) {
 
   res.render("jobs/seekers", {
     title: "Seekers by Job",
+    job_id: req.params.id,
     users,
   });
 }

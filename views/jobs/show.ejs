@@ -15,8 +15,34 @@
   <div><%= job.startDate %></div>
   <div>Description:</div>
   <div><%= job.description %></div>
-  <div>Skills:</div>
-  <div><%= job.skills %></div>
+  <div>Skills Match:</div>
+  <table
+    class="table table-hover table-primary rounded overflow-hidden"
+    class="border border-primary"
+  >
+    <caption>
+      List of Job Skills
+    </caption>
+    <tbody>
+      <% heatmap.forEach((h) => { %>
+      <tr>
+        <td><%= h.jobSkill %></td>
+        <td>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: <%= h.closeness %>%"
+              aria-valuenow="<%= h.closeness %>"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
 
   <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
     <!-- <input type="hidden" name="_method" value="DELETE"> -->
