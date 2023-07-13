@@ -9,6 +9,7 @@ match("javascript, html, css, express, restful", "java, ejb, express");
 
 function matchHeatmap(seekerSkills, jobSkills, topN) {
   const closeness = match(seekerSkills, jobSkills);
+  console.log("closeness", closeness);
   let sum = 0;
   const minLengthAndTopN = Math.min(topN, closeness.length);
   for (let jobIndex = 0; jobIndex < minLengthAndTopN; jobIndex++) {
