@@ -3,6 +3,7 @@
 <h1>Job Details</h1>
 
 <section id="show-page">
+
   <div class="card p-3 mb-2">
     <div class="row">
       <div class="col-md-6">
@@ -51,11 +52,14 @@
     </div>
   </div>
 
-  <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete Job</button>
-  </form>
 
-  <a href="/jobs/<%= job._id %>/edit">Edit Job</a>
+<% if (poster && user && poster._id.equals(user._id)) { %>
+      <a href='/jobs/<%= job._id %>/edit' class="btn btn-primary">Edit Job</a>
+    <br><br>
+    <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-danger">Delete Job</button>
+    </form>
+  <% } %>
 
 </section>
 
