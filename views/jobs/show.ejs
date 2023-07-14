@@ -3,52 +3,64 @@
 <h1>Job Details</h1>
 
 <section id="show-page">
-  <div>Company:</div>
-  <div><%= job.company %></div>
-  <div>Title:</div>
-  <div><%= job.title %></div>
-  <div>Salary:</div>
-  <div><%= job.wage %></div>
-  <div>Location:</div>
-  <div><%= job.location %></div>
-  <div>Start Date:</div>
-  <div><%= job.startDate %></div>
-  <div>Description:</div>
-  <div><%= job.description %></div>
-  <div>Skills Match:</div>
-  <table
-    class="table table-hover table-primary rounded overflow-hidden"
-    class="border border-primary"
-  >
-    <caption>
-      List of Job Skills
-    </caption>
-    <tbody>
-      <% if (heatmap) { heatmap.forEach((h) => { %>
-      <tr>
-        <td><%= h.jobSkill %></td>
-        <td>
-          <div class="progress">
-            <div
-              class="progress-bar"
-              role="progressbar"
-              style="width: <%= h.closeness %>%"
-              aria-valuenow="<%= h.closeness %>"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
-          </div>
-        </td>
-      </tr>
-      <% })} %>
-    </tbody>
-  </table>
 
-  <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete Job</button>
-  </form>
+  <div class="card p-3 mb-2">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="details">
+          <div class="title">Company:</div>
+          <div class="value"><%= job.company %></div>
+          <div class="title">Title:</div>
+          <div class="value"><%= job.title %></div>
+          <div class="title">Salary:</div>
+          <div class="value"><%= job.wage %></div>
+          <div class="title">Location:</div>
+          <div class="value"><%= job.location %></div>
+          <div class="title">Start Date:</div>
+          <div class="value"><%= job.startDate %></div>
+          <div class="title">Description:</div>
+          <div class="value"><%= job.description %></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="details">
+          <div class="title">Skills Match:</div>
+          <table class="table table-hover table-primary rounded overflow-hidden border border-primary">
+            <caption>List of Job Skills</caption>
+            <tbody>
+              <% if (heatmap) { heatmap.forEach((h) => { %>
+              <tr>
+                <td><%= h.jobSkill %></td>
+                <td>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: <%= h.closeness %>%"
+                      aria-valuenow="<%= h.closeness %>"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </td>
+              </tr>
+              <% })} %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <a href="/jobs/<%= job._id %>/edit">Edit Job</a>
 
-  <%- include('../partials/footer') %>
+<% if (poster && user && poster._id.equals(user._id)) { %>
+      <a href='/jobs/<%= job._id %>/edit' class="btn btn-primary">Edit Job</a>
+    <br><br>
+    <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-danger">Delete Job</button>
+    </form>
+  <% } %>
+
 </section>
+
+<%- include('../partials/footer') %>

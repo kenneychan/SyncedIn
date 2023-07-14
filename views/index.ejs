@@ -70,7 +70,9 @@
             Let us help you find your next big career move or discover the
             perfect addition to your team.Together, let's synchronize success!
           </p>
+
           <p><a class="btn btn-lg" href="#" id="buttons">Sign up today</a></p>
+
         </div>
       </div>
     </div>
@@ -100,7 +102,9 @@
             navigate the job market with you, ensuring you land the job that
             aligns with your skills, aspirations, and growth potential.
           </p>
+
           <p><a class="btn btn-lg" href="#" id="buttons">Learn more</a></p>
+
         </div>
       </div>
     </div>
@@ -131,7 +135,9 @@
             commitment to excellence, we will help you build a skilled and
             high-performing team that drives your business forward.
           </p>
+
           <p><a class="btn btn-lg " id="buttons">Browse gallery</a></p>
+
         </div>
       </div>
     </div>
@@ -160,17 +166,29 @@
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4">
+      <%   const randomSeeker = [];
+  
+      while (randomSeeker.length < 3) {
+        const randomNum = Math.floor(Math.random() * users.length);
+        
+        if (!randomSeeker.includes(randomNum)) {
+          randomSeeker.push(randomNum);
+        }
+      };
+      %>
       <image 
       class="rounded-circle border-custom"
       alt="avatar"
-      src="<%= users[0].avatar %>"
+      src="<%= users[randomSeeker[0]].avatar %>"
       referrerpolicy="no-referrer"
       />
-      <h2 class="fw-normal"><%= users[0].name %></h2>
-      <p><%= users[0].about %></p>
+      <h2 class="fw-normal"><%= users[randomSeeker[0]].name %></h2>
+      <p><%= users[randomSeeker[0]].about %></p>
       <p>
-        <a class="btn" href="/users/<%= users[0]._id %>"
+
+        <a class="btn" href="/users/<%= users[randomSeeker[0]]._id %>"
           id="buttons">View details &raquo;</a
+
         >
       </p>
     </div>
@@ -179,14 +197,16 @@
       <image
       class="rounded-circle border-custom"
       alt="avatar"
-      src="<%= users[1].avatar %>"
+      src="<%= users[randomSeeker[1]].avatar %>"
       referrerpolicy="no-referrer"
      />
-      <h2 class="fw-normal"><%= users[1].name %></h2>
-      <p><%= users[1].about %></p>
+      <h2 class="fw-normal"><%= users[randomSeeker[1]].name %></h2>
+      <p><%= users[randomSeeker[1]].about %></p>
       <p>
-        <a class="btn" href="/users/<%= users[1]._id %>"
+
+        <a class="btn" href="/users/<%= users[randomSeeker[1]]._id %>"
           id="buttons" >View details &raquo;</a
+
         >
       </p>
     </div>
@@ -196,12 +216,12 @@
       id=""
       class="rounded-circle border-custom"
       alt="avatar"
-      src="<%= users[2].avatar %>"
+      src="<%= users[randomSeeker[2]].avatar %>"
       referrerpolicy="no-referrer"
       
       />
-      <h2 class="fw-normal"><%= users[2].name %></h2>
-      <p><%= users[2].about %></p>
+      <h2 class="fw-normal"><%= users[randomSeeker[2]].name %></h2>
+      <p><%= users[randomSeeker[2]].about %></p>
       <p>
         <a class="btn btn-style" href="/users/<%= users[1]._id %>"
           id="buttons" >View details &raquo;</a
@@ -219,11 +239,23 @@
   <div class="row featurette">
     <div class="col-md-7">
       <h2 class="featurette-heading fw-normal lh-1">
-        <%= jobs[0].company %>
+        <%   const randomJobs = [];
+  
+        while (randomJobs.length < 3) {
+          const randomNum = Math.floor(Math.random() * jobs.length);
+          
+          if (!randomJobs.includes(randomNum)) {
+            randomJobs.push(randomNum);
+          }
+        };
+        %>
+        <%= jobs[randomJobs[0]].company %>
       </h2>
-      <h3><span><%= jobs[0].title %></p></span>
+
+      <h3><span><%= jobs[randomJobs[0]].title %></p></span>
+
       </h3>
-      <p class="lead"><%= jobs[0].description %></p>
+      <p class="lead"><%= jobs[randomJobs[0]].description %></p>
     </div>
     <div class="col-md-5">
 
@@ -240,14 +272,16 @@
   <hr class="featurette-divider" />
 
   <div class="row featurette">
-    <div class="col-md-7 order-md-2">
+    <div class="col-md-7  order-md-2">
       <h2 class="featurette-heading fw-normal lh-1">
-        <%= jobs[1].company %>
+        <%= jobs[randomJobs[1]].company %>
       </h2>
-      <h3><span><%= jobs[1].title %></p></span>
+
+      <h3><span><%= jobs[randomJobs[1]].title %></p></span>
+
       </h3>
-      <p class="lead"><%= jobs[1].description %></p>
-    </div>    
+      <p class="lead"><%= jobs[randomJobs[1]].description %></p>
+    </div>   
     <div class="col-md-5 order-md-1">
       <svg
         class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -274,11 +308,13 @@
   <div class="row featurette">
     <div class="col-md-7">
       <h2 class="featurette-heading fw-normal lh-1">
-        <%= jobs[2].company %>
+        <%= jobs[randomJobs[2]].company %>
       </h2>
-      <h3><span ><%= jobs[2].title %></p></span>
+
+      <h3><span ><%= jobs[randomJobs[2]].title %></p></span>
+
       </h3>
-      <p class="lead"><%= jobs[2].description %></p>
+      <p class="lead"><%= jobs[randomJobs[2]].description %></p>
     </div>    
     <div class="col-md-5">
       <svg

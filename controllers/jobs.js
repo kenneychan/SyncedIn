@@ -61,8 +61,8 @@ async function create(req, res) {
 async function show(req, res) {
   try {
     const user = await User.findById(req.user._id);
-    // console.log("user", user.seeker.skills);
     const job = await Job.findById(req.params.id);
+    const poster = await User.findById(job.poster_id);
 
     let heatmap;
     if (user.seeker && user.seeker.skills && job.skills) {
@@ -71,7 +71,7 @@ async function show(req, res) {
         skill.closeness = Math.ceil(100 * skill.closeness);
       });
     }
-    res.render("jobs/show", { job, heatmap });
+    res.render("jobs/show", { job, heatmap, user, poster });
   } catch (err) {
     console.log(err);
     res.render("error", { message: err.message, error: err });
