@@ -16,9 +16,9 @@
     <script defer src="/js/script.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/" id="navcolor">
           <img
             src="/images/sync-32.png"
             alt="Logo"
@@ -27,18 +27,18 @@
           />
           SyncedIn
         </a>
-        <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="collapse navbar-collapse">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/"
+              <a class="nav-link active" id="navcolor" aria-current="page" href="/"
                 >Home Page</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/seekers">Job-Seekers</a>
+            <li class="nav-item" >
+              <a class="nav-link" id="navcolor" href="/users/seekers">Job-Seekers</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/jobs">Jobs</a>
+              <a class="nav-link" href="/jobs" id="navcolor">Jobs</a>
             </li>
             <% if (user && user.roleAdmin) { %>
             <li class="nav-item dropdown">
@@ -48,25 +48,28 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                id="navcolor"
               >
                 Admin
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/users">Users</a></li>
+                <li><a class="dropdown-item" href="/users" id="navcolor">Users</a></li>
               </ul>
             </li>
             <% } %>
             <% if (user && user.rolePoster) { %>
             <li class="nav-item">
-              <a class="nav-link" href="/jobs/new" <%- title === 'Add New Job' ? 'class="active"' : '' %>>Add Job</a>
+              <a class="nav-link" href="/jobs/new" id="navcolor" <%- title === 'Add New Job' ? 'class="active"' : '' %>>Add Job</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/jobs/jobsByPoster" <%- title === 'Job by Poster' ? 'class="active"' : '' %>>Jobs by Poster</a>
+
+              <a class="nav-link" href="/jobs/jobsByPoster" id="navcolor"<%- title === 'Job by Poster' ? 'class="active"' : '' %>>My Jobs</a>
+
             </li>
             <% } %>
           </ul>
         </div>
-        <% if (user) { %><a class="nav-link" href="/users/profile">Profile</a> &nbsp; &nbsp; | &nbsp; &nbsp;
+        <% if (user) { %><a class="nav-link" href="/users/profile" >Profile</a> &nbsp; &nbsp; | &nbsp; &nbsp;
         <a href="/logout" class="login nav-link">Log Out</a>
         <% } else { %>
         <a href="/auth/google" class="login nav-link"
