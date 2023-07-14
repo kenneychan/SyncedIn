@@ -19,6 +19,8 @@ router.put("/:id", ensureLoggedIn, usersCtrl.update);
 
 router.get("/seekers", ensureLoggedIn, usersCtrl.showSeekers);
 
+router.get("/:id/job/:job_id", ensureLoggedIn, usersCtrl.showByJob);
+
 router.get("/:id", ensureLoggedIn, usersCtrl.show);
 
 router.put("/profile/update", ensureLoggedIn, usersCtrl.updateProfile);

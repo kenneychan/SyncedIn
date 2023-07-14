@@ -1,4 +1,7 @@
 const User = require("../models/user");
+const Job = require("../models/job");
+const skillsMatching = require("./utils/skillsMatching");
+
 const Seeker = require("../models/seeker");
 
 const ROLE = {
@@ -14,6 +17,7 @@ module.exports = {
   update,
   showSeekers,
   show,
+  showByJob,
   updateProfile,
   delete: deleteProfile,
 };
@@ -46,6 +50,32 @@ async function show(req, res) {
   } else {
     res.render("users/show", {
       title: "User Details",
+      user,
+    });
+  }
+}
+
+async function showByJob(req, res) {
+  console.log("params.job_id", req.params.job_id);
+  const job = await Job.findById(req.params.job_id);
+
+  const jobSkills = job.skills;
+  console.log("jobSkills", jobSkills);
+
+  const user = await User.findById(req.params.id);
+  if (!user) {
+    res.redirect("/users");
+  } else {
+    console.log("userSkills", req.user.seeker.skills);
+    const heatmap = skillsMatching.match(req.user.seeker.skills, job.skills);
+    heatmap.map((skill) => {
+      skill.closeness = Math.ceil(100 * skill.closeness);
+    });
+    console.log("heatmap", heatmap);
+    res.render("users/showByJob", {
+      title: "User Details by Job",
+      heatmap,
+      job,
       user,
     });
   }
