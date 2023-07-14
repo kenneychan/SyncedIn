@@ -28,6 +28,11 @@ a {
   height: 40px;
 }
 
+
+.title {
+  font-weight: bold;
+}
+
 .carousel-caption p {
   font-size: 1rem;
   text-align: center;
@@ -35,6 +40,7 @@ a {
 
 .navbar {
   border-radius: 5px;
+
   background-color: #88bdbc;
   color: #112d32;
 }
@@ -59,3 +65,11 @@ h1 {
   background-color: #4f4a41;
   color: #112d32;
 }
+
+}
+
+.footer-container {
+  text-align: center;
+}
+
+
