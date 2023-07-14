@@ -65,6 +65,22 @@ h1 {
   color: #112d32;
 }
 
+.about-section {
+  background-color: #6e6658;
+  color: #88bdbc;
+  padding: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.skills-section {
+  background-color: #6e6658;
+  color: #88bdbc;
+  padding: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .custom-label {
   background-color: #6e6658;
   border: 1px solid #4f4a41;

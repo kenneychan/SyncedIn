@@ -1,12 +1,17 @@
 <%- include('./partials/header') %>
 
-<div
-  class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center midl"
->
+<div class="banner position-relative">
+  <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Maui_banner.jpg" alt="Banner Image" class="img-fluid"> -->
+  <!-- <img src="https://wikitravel.org/upload/shared//d/d9/New_Jersey_Banner.jpg" alt="Banner Image" class="img-fluid"> -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Hanauma_Bay_Hawaii_banner.jpg" alt="Banner Image" class="img-fluid">
+  <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/2560px-Cidade_Maravilhosa.jpg" alt="Banner Image" class="img-fluid"> -->
+  
 
-    <h1 class="display-4 font-weight-normal"><%= title %></h1>
-
+  <div class="position-absolute top-50 start-50 translate-middle p-3 p-md-5 m-md-3 text-center">
+    <h1 class="display-4 font-weight-bold text-white"><%= title %></h1>
+  </div>
 </div>
+
 
 <div
   id="myCarousel"
@@ -258,15 +263,15 @@
       <p class="lead"><%= jobs[randomJobs[0]].description %></p>
     </div>
     <div class="col-md-5">
-
     <image
-    width="300"
-    height="300"
-    fill="var(--bs-secondary-bg)"
-    alt="avatar"
-    src="https://www.artapixel.com/images/artapixel/38-artapixel-meta-logo-icon-3d-social-media-pv.jpg"
-    referrerpolicy="no-referrer"
-  />   </div>
+      width="400"
+      height="400"
+      fill="var(--bs-secondary-bg)"
+      alt="avatar"
+      src="<%= jobs[randomJobs[0]].image %>"
+      referrerpolicy="no-referrer"
+    />   
+    </div>
   </div>
 
   <hr class="featurette-divider" />
@@ -283,23 +288,15 @@
       <p class="lead"><%= jobs[randomJobs[1]].description %></p>
     </div>   
     <div class="col-md-5 order-md-1">
-      <svg
-        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-        width="500"
-        height="500"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Placeholder: 500x500"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-
-        <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-          500x500
-        </text>
-      </svg>
+      <image
+      width="400"
+      height="400"
+      fill="var(--bs-secondary-bg)"
+      alt="avatar"
+      
+      src="<%= jobs[randomJobs[1]].image %>"
+      referrerpolicy="no-referrer"
+    />   
     </div>
   </div>
 
@@ -317,22 +314,14 @@
       <p class="lead"><%= jobs[randomJobs[2]].description %></p>
     </div>    
     <div class="col-md-5">
-      <svg
-        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-        width="500"
-        height="500"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Placeholder: 500x500"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-        <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-          500x500
-        </text>
-      </svg>
+      <image
+      width="400"
+      height="400"
+      fill="var(--bs-secondary-bg)"
+      alt="avatar"
+      src="<%= jobs[randomJobs[2]].image %>"
+      referrerpolicy="no-referrer"
+    />   
     </div>
   </div>
 
@@ -341,3 +330,4 @@
   <!-- /END THE FEATURETTES -->
 </div>
 <%- include('./partials/footer') %>
+

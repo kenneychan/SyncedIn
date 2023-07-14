@@ -1,21 +1,23 @@
 <%- include('../partials/header') %>
-
-<container class="container"
-  ><img
-    alt="avatar"
-    src="<%= user.avatar %>"
-    referrerpolicy="no-referrer"
-    class="rounded-circle"
-  />&nbsp; &nbsp; | &nbsp; &nbsp;<%= user.name %></container
->
+<br><br>
+<div class="container d-flex align-items-center justify-content-center">
+  <div class="text-center">
+    <img
+      alt="avatar"
+      src="<%= user.avatar %>"
+      referrerpolicy="no-referrer"
+      class="rounded-circle border border-custom"
+    />&nbsp; &nbsp; | &nbsp; &nbsp;<%= user.name %>
+  </div>
+</div>
 <br /><br />
 
-<h2 class="h2">About</h2>
+<h2 class="h2 text-center">About</h2>
 
 <% if (user.about) { %>
-  <div>
-  <p><%= user.about %></p>
-  <button id="bioEditButton" class="btn btn-primary">Edit</button>
+  <div class="about-section border border-custom rounded">
+    <p><%= user.about %></p>
+    <button id="bioEditButton" class="btn btn-primary">Edit</button>
   </div>
 <% } %>
 
@@ -35,15 +37,14 @@
 </form>
 
 <% if (user.seeker?.skills) { %>
-  <div>
+  <div class="skills-section border border-custom rounded">
     <label for="skills">Skills</label>
-  <p><%= user.seeker.skills %></p>
-  <button id="skillsEditButton" class="btn btn-primary">Edit</button>
+    <p><%= user.seeker.skills %></p>
+    <button id="skillsEditButton" class="btn btn-primary">Edit</button>
   </div>
 <% } %>
 
 <form id="skillsEditForm" <% if (!user.seeker?.skills) { %> action="/users/profile/update?_method=PUT" method="POST" <% } %> <% if (user.seeker?.skills ) { %> action="/users/profile/update" method="POST" <% } %> <% if (user.seeker?.skills) { %>style="display: none;"<% } %>>
-
   <div class="input-group border border-dark rounded">
     <textarea
       name="skills"
@@ -53,7 +54,7 @@
     ></textarea>
   </div>
   <br>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn" id="buttons">Submit</button>
 </form>
 <br><br>
 
