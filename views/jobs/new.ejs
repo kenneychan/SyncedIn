@@ -3,30 +3,28 @@
 <h1>Add New Job Listing</h1>
 
 <form id="new-form" action="/jobs" method="POST">
-    <label> Company: </label>
-    <input type="text" name="company">
-    <label> Title: </label>
-    <input type="text" name="title">
-    <label>Description: </label>
-    <input type="text" name="description">
-    <label> Skills: </label>
-    <input type="text" name="skills">
-    <label> Location: </label>
-    <input type="text" name="location">
-    <label>Start Date: </label>
-    <input type="text" name="startDate">
-    <label> Salary: </label>
-    <select name="wage">
-        <option value="$50,000-$75,000">$50,000-$75,000</option>
-        <option value="$75,000-$100,000">$75,000-$100,000</option>
-        <option value="$100,000-$125,000">$100,000-$125,000</option>
-        <option value="$125,000-$155,000">$125,000-$155,000</option>
-        <option value="$150,000-$175,000">$150,000-$175,000</option>
-        <option value="$175,000-$200,000">$175,000-$200,000</option>
-        <option value="$200,000-$250,000+">$200,000-$250,000+</option>
-    </select>
-    <input type="submit" value="Add Job">
+  <label> Company: </label>
+  <input type="text" name="company" />
+  <label> Title: </label>
+  <input type="text" name="title" />
+  <label>Description: </label>
+  <input type="text" name="description" />
+  <label> Skills: </label>
+  <input type="text" name="skills" />
+  <label> Location: </label>
+  <input type="text" name="location" />
+  <label>Start Date: </label>
+  <input type="text" name="startDate" />
+  <label> Salary: </label>
+  <select name="wage">
+    <option value="$50,000-$75,000">$50,000-$75,000</option>
+    <option value="$75,000-$100,000">$75,000-$100,000</option>
+    <option value="$100,000-$125,000">$100,000-$125,000</option>
+    <option value="$125,000-$155,000">$125,000-$155,000</option>
+    <option value="$150,000-$175,000">$150,000-$175,000</option>
+    <option value="$175,000-$200,000">$175,000-$200,000</option>
+    <option value="$200,000-$250,000+">$200,000-$250,000+</option>
+  </select>
+  <input type="submit" value="Add Job" />
 </form>
 <%- include('../partials/footer') %>
-
-
