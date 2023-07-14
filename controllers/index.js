@@ -7,7 +7,7 @@ module.exports = {
 
 async function index(req, res) {
   const users = await User.find();
-  const jobs = await Job.findById();
+  const jobs = await Job.find();
 
   res.render("index", {
     title: "SyncedIn",

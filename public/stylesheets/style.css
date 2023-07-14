@@ -30,3 +30,7 @@ a {
 .carousel-caption p {
   font-size: 1rem
 }
+
+.navbar {
+  border-radius: 5px;
+}
