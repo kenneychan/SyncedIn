@@ -34,3 +34,7 @@ a {
 .navbar {
   border-radius: 5px;
 }
+
+.footer-container {
+  text-align: center;
+}
