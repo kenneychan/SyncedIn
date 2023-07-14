@@ -1,48 +1,49 @@
 <%- include('../partials/header') %>
-
-<h2>Users List</h2>
-<table>
+<br><br>
+<h2>Users List</h2><br>
+<table id="table-complete">
   <thead>
-    <tr>
-      <th data-sort="string">Name</th>
-      <th>GoogleId</th>
-      <th>eMail</th>
-      <th>Seeker</th>
-      <th>Poster</th>
-      <th>Admin</th>
+    <tr id="table-css" class="table-ccs-first">
+      <th data-sort="string"><h5>   Name</h5></th>
+      <th><h5>GoogleId</h5></th>
+      <th><h5>eMail</h5></th>
+      <th><h5>Seeker</h5></th>
+      <th><h5>Poster</h5></th>
+      <th><h5>Admin</h5></th>
     </tr>
   </thead>
   <tbody>
     <% users.forEach (function (u) { %>
     <tr>
-      <td class="review-user">
+      <td class="review-user" id="table-css">
         <img
           alt="avatar"
           src="<%= u.avatar %>"
           referrerpolicy="no-referrer"
         /><%= u.name %>
       </td>
-      <td><%= u.googleId %></td>
-      <td><%= u.email %></td>
+      <td id="table-css"><%= u.googleId %></td>
+      <td id="table-css"><%= u.email %></td>
       <form action="/users/<%= u._id %>?_method=PUT" method="POST">
 
-        <td>
+        <td id="table-css">
           <input type="checkbox" class="role" name="roleSeeker" <%=
           u.roleSeeker ? 'checked' : ''%>/> Seeker
         </td>
-        <td>
+        <td id="table-css">
           <input type="checkbox" class="role" name="rolePoster" <%=
           u.rolePoster ? 'checked' : ''%>/>Poster
         </td>
-        <td>
+        <td id="table-css">
           <input type="checkbox" class="role" name="roleAdmin" <%=
           u.roleAdmin ? 'checked' : ''%>/>Admin
         </td>
-        <td><button>Update</button></td>
+        <td id="table-css"><button id="buttons">Update</button></td>
       </form>
     </tr>
     <% }) %>
   </tbody>
 </table>
+<br>
 
 <%- include('../partials/footer') %>

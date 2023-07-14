@@ -28,7 +28,6 @@ a {
   height: 40px;
 }
 
-
 .title {
   font-weight: bold;
 }
@@ -66,15 +65,43 @@ h1 {
   color: #112d32;
 }
 
-
 .custom-label {
-  background-color: #6e6658; /* Replace with your desired background color */
-  border: 1px solid #4f4a41; /* Replace with your desired border color and thickness */
-  padding: 5px; /* Adjust padding as needed */
-  display: inline-block; /* Keeps the label and input elements on the same line */
+  background-color: #6e6658;
+  border: 1px solid #4f4a41;
+  padding: 5px;
+  display: inline-block;
   color: #112d32;
 }
 
 .footer-container {
+  text-align: center;
+}
+
+.review-user {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#table-css {
+  border-bottom: 1px solid #4f4a41;
+  padding: 8px;
+}
+
+#table-complete {
+  background-color: #6e6658;
+  border-left: 1px solid #4f4a41;
+  border-right: 1px solid #4f4a41;
+}
+
+.table-ccs-first {
+  border-top: 1px solid #4f4a41;
+  border-left: 1px solid #4f4a41;
+  border-right: 1px solid #4f4a41;
+}
+
+h5 {
+  color: #112d32;
+  margin-top: 5px;
   text-align: center;
 }
