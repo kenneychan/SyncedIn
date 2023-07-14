@@ -75,6 +75,7 @@ h1 {
 
 .footer-container {
   text-align: center;
+  color: #112d32;
 }
 
 .review-user {
@@ -104,4 +105,15 @@ h5 {
   color: #112d32;
   margin-top: 5px;
   text-align: center;
+}
+.blockquote {
+  color: #112d32;
+}
+.blockquote-footer {
+  color: #112d32;
+}
+
+#buttons:hover {
+  background-color: #88bdbc;
+  color: #112d32;
 }
