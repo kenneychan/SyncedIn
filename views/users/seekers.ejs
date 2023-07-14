@@ -1,23 +1,24 @@
 <%- include('../partials/header') %>
-
+<br><br> <h4>
 <blockquote class="blockquote text-center">
   <p class="mb-0">You're gonna like the person you hire, I guarantee it.</p>
   <br>
   <footer class="blockquote-footer">The Men's Warehouse guy, probably.</cite></footer>
-</blockquote>
-<table class="table table-hover rounded overflow-hidden custom-table" class="border " >
-   <caption>List of Job Seekers</caption>
+</blockquote><br> </h4>
+<table class="table table-hover rounded overflow-hidden custom-table" class="border" >
+  <h2>List of Job Seekers</h2> <br>
   <tbody>
     <% users.forEach (function (u) { %>
     <tr>
       <td class="review-user">
         <img
+        class="rounded-circle border-custom"
           alt="avatar"
           src="<%= u.avatar %>"
           referrerpolicy="no-referrer"
         />&nbsp; &nbsp;<%= u.name %>
       </td>
-      <td><a href="/users/<%= u._id %>" class="btn btn-info">Profile</a></td>
+      <td><a href="/users/<%= u._id %>" class="btn" id="buttons">Profile</a></td>
     </tr>
     <% }) %>
   </tbody>
