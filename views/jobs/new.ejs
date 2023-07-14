@@ -5,23 +5,27 @@
 <br />
 
 <form id="new-form" action="/jobs" method="POST">
-  <labe> Company: </label>
-  <input type="text" name="company" class="custom-label"/> <br />
+  <label> Company: </label>
+  <input type="text" name="company" class="custom-label" /> <br />
   <br />
-  <label > Title: </label>
-  <input type="text" name="title" class="custom-label"/> <br />
+  <label> Image: </label>
+  <input type="text" name="image" class="custom-label" /> <br />
   <br />
-  <label >Description: </label>
-  <input type="text" name="description" class="custom-label"/> <br />
+  <label> Title: </label>
+  <input type="text" name="title" class="custom-label" /> <br />
   <br />
+  <label>Description: </label>
+  <input type="text" name="description" class="custom-label" /> <br />
+  <br />
+
   <label> Skills: </label>
-  <input type="text" name="skills" class="custom-label"/> <br />
+  <input type="text" name="skills" class="custom-label" /> <br />
   <br />
   <label> Location: </label>
-  <input type="text" name="location" class="custom-label"/> <br />
+  <input type="text" name="location" class="custom-label" /> <br />
   <br />
   <label>Start Date: </label>
-  <input type="text" name="startDate" class="custom-label"/> <br />
+  <input type="text" name="startDate" class="custom-label" /> <br />
   <br />
   <label> Salary: </label>
   <select name="wage" class="custom-label">
@@ -35,6 +39,7 @@
   </select>
   <br />
   <br />
-  <input id="buttons" type="submit" value="Add Job" /> <br /> <br />
+  <input id="buttons" type="submit" value="Add Job" /> <br />
+  <br />
 </form>
 <%- include('../partials/footer') %>
