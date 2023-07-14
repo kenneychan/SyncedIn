@@ -24,7 +24,7 @@
       List of Job Skills
     </caption>
     <tbody>
-      <% heatmap.forEach((h) => { %>
+      <% if (heatmap) { heatmap.forEach((h) => { %>
       <tr>
         <td><%= h.jobSkill %></td>
         <td>
@@ -40,7 +40,7 @@
           </div>
         </td>
       </tr>
-      <% }) %>
+      <% })} %>
     </tbody>
   </table>
 
@@ -48,8 +48,7 @@
     <button type="submit">Delete Job</button>
   </form>
 
-  <a href='/jobs/<%= job._id %>/edit'>Edit Job</a>
-
+  <a href="/jobs/<%= job._id %>/edit">Edit Job</a>
 
   <%- include('../partials/footer') %>
 </section>
