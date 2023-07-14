@@ -1,24 +1,34 @@
 <%- include('../partials/header') %>
 
+<br /><br />
 <h1>Add New Job Listing</h1>
+<br />
 
 <form id="new-form" action="/jobs" method="POST">
   <label> Company: </label>
-  <input type="text" name="company" />
+  <input type="text" name="company" class="custom-label" /> <br />
+  <br />
   <label> Image: </label>
-  <input type="text" name="image" />
+  <input type="text" name="image" class="custom-label" /> <br />
+  <br />
   <label> Title: </label>
-  <input type="text" name="title" />
+  <input type="text" name="title" class="custom-label" /> <br />
+  <br />
   <label>Description: </label>
-  <input type="text" name="description" />
+  <input type="text" name="description" class="custom-label" /> <br />
+  <br />
+
   <label> Skills: </label>
-  <input type="text" name="skills" />
+  <input type="text" name="skills" class="custom-label" /> <br />
+  <br />
   <label> Location: </label>
-  <input type="text" name="location" />
+  <input type="text" name="location" class="custom-label" /> <br />
+  <br />
   <label>Start Date: </label>
-  <input type="text" name="startDate" />
+  <input type="text" name="startDate" class="custom-label" /> <br />
+  <br />
   <label> Salary: </label>
-  <select name="wage">
+  <select name="wage" class="custom-label">
     <option value="$50,000-$75,000">$50,000-$75,000</option>
     <option value="$75,000-$100,000">$75,000-$100,000</option>
     <option value="$100,000-$125,000">$100,000-$125,000</option>
@@ -27,6 +37,9 @@
     <option value="$175,000-$200,000">$175,000-$200,000</option>
     <option value="$200,000-$250,000+">$200,000-$250,000+</option>
   </select>
-  <input type="submit" value="Add Job" />
+  <br />
+  <br />
+  <input id="buttons" type="submit" value="Add Job" /> <br />
+  <br />
 </form>
 <%- include('../partials/footer') %>
