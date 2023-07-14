@@ -1,34 +1,34 @@
 <%- include('../partials/header') %>
 <br><br>
-<div class="centered">
-  <div class="container"></div>
+<div class="container d-flex align-items-center justify-content-center"></div>
+  <div class="text-center">
     <img
       alt="avatar"
       src="<%= user.avatar %>"
       referrerpolicy="no-referrer"
-      class="rounded-circle"
+      class="rounded-circle border border-custom"
     />&nbsp; &nbsp; | &nbsp; &nbsp;<%= user.name %>
   </div>
-  
-  <br><br>
-  
-  <h2 class="h2">About</h2>
-  
-  <div>
-    <p><%= user.about %></p>
-  </div>
-  
-  <br><br>
-  
-  <% if (user.seeker?.skills) { %>
-  <h2 class="h2">Skills</h2>
-  
-  <div>
-    <p><%= user.seeker.skills %></p>
-  </div>
-  
-  <% } %>
 </div>
 
+<br><br>
+
+<h2 class="h2 text-center">About</h2>
+
+<div class="text-center about-section rounded border border-custom">
+  <p><%= user.about %></p>
+</div>
+
+<br><br>
+
+<% if (user.seeker?.skills) { %>
+<h2 class="h2 text-center">Skills</h2>
+
+<div class="text-center skills-section rounded border border-custom">
+  <p><%= user.seeker.skills %></p>
+</div>
+
+<% } %>
+<br><br>
 
 <%- include('../partials/footer') %>

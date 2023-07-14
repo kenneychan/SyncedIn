@@ -70,12 +70,18 @@ h1 {
   text-align: center;
 }
 
-.centered {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.about-section {
+  background-color: #6e6658;
+  color: #88bdbc;
+  padding: 10px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-
+.skills-section {
+  background-color: #6e6658;
+  color: #88bdbc;
+  padding: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
