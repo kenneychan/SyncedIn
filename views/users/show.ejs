@@ -19,9 +19,14 @@
 
 <br><br>
 
+<% if (user.seeker?.skills) { %>
 <h2 class="h2">Skills</h2>
 
 <div>
   <p><%= user.seeker.skills %></p>
 </div>
+
+<% } %>
+
+
 <%- include('../partials/footer') %>

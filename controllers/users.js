@@ -1,4 +1,7 @@
 const User = require("../models/user");
+const Job = require("../models/job");
+const skillsMatching = require("./utils/skillsMatching");
+
 const Seeker = require("../models/seeker");
 
 const ROLE = {
@@ -14,7 +17,9 @@ module.exports = {
   update,
   showSeekers,
   show,
+  showByJob,
   updateProfile,
+  delete: deleteProfile,
 };
 
 async function updateProfile(req, res) {
@@ -45,6 +50,32 @@ async function show(req, res) {
   } else {
     res.render("users/show", {
       title: "User Details",
+      user,
+    });
+  }
+}
+
+async function showByJob(req, res) {
+  console.log("params.job_id", req.params.job_id);
+  const job = await Job.findById(req.params.job_id);
+
+  const jobSkills = job.skills;
+  console.log("jobSkills", jobSkills);
+
+  const user = await User.findById(req.params.id);
+  if (!user) {
+    res.redirect("/users");
+  } else {
+    console.log("userSkills", req.user.seeker.skills);
+    const heatmap = skillsMatching.match(req.user.seeker.skills, job.skills);
+    heatmap.map((skill) => {
+      skill.closeness = Math.ceil(100 * skill.closeness);
+    });
+    console.log("heatmap", heatmap);
+    res.render("users/showByJob", {
+      title: "User Details by Job",
+      heatmap,
+      job,
       user,
     });
   }
@@ -86,4 +117,21 @@ async function update(req, res) {
   }
   await user.save();
   res.redirect("/users");
+}
+
+async function deleteProfile(req, res) {
+  try {
+    await User.findByIdAndDelete(req.user._id);
+    // Clear the session and remove the user from the session
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Error destroying session:", err);
+      }
+    });
+    res.redirect("/"); // Redirect to the logout page
+  } catch (error) {
+    // Handle the error appropriately
+    console.error("Error deleting user:", error);
+    res.redirect("/users/profile"); // Redirect back to the profile page or show an error page
+  }
 }

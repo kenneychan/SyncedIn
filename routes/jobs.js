@@ -9,6 +9,8 @@ var jobs = require("../models/job"); // Import the correct model file
 router.get("/", ensureLoggedIn, syncCtrl.index);
 // get new jobs
 router.get("/new", ensureLoggedIn, syncCtrl.new);
+// get jobs filtered by poster
+router.get("/jobsByPoster", syncCtrl.jobsByPoster);
 // Create job posting
 router.post("/", ensureLoggedIn, syncCtrl.create);
 // show detials for job post
@@ -18,6 +20,7 @@ router.delete("/:id", ensureLoggedIn, syncCtrl.delete);
 router.get("/:id/edit", ensureLoggedIn, syncCtrl.edit);
 // update job
 router.put("/:id", ensureLoggedIn, syncCtrl.update);
-
+// get jobs filtered by poster
+router.get("/:id/seekers", syncCtrl.seekers);
 
 module.exports = router;
