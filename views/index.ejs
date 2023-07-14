@@ -163,7 +163,7 @@
       <%   const randomSeeker = [];
   
       while (randomSeeker.length < 3) {
-        const randomNum = Math.floor(Math.random() * randomSeeker.length);
+        const randomNum = Math.floor(Math.random() * users.length);
         
         if (!randomSeeker.includes(randomNum)) {
           randomSeeker.push(randomNum);
