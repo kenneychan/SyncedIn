@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<div class="container mt-5 mb-3">
+<div class="container mt-5 mb-3 table">
   <div class="row">
     <% jobs.forEach(function(job) { %>
     <div class="col-md-4">
@@ -36,7 +36,7 @@
                 >
               </div>
               <br>
-              <div><a href="/jobs/<%= job._id %>/seekers" class="btn btn-primary">Seekers</a></div>
+              <div><a href="/jobs/<%= job._id %>/seekers" class="btn" id="buttons">Seekers</a></div>
               <br><br>
               <div><a href="/jobs/<%= job._id %>" class="btn btn-info">Details</a></div>
             </div>

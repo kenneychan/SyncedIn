@@ -17,7 +17,7 @@
 <% if (user.about) { %>
   <div class="about-section border border-custom rounded">
     <p><%= user.about %></p>
-    <button id="bioEditButton" class="btn btn-primary">Edit</button>
+    <button id="bioEditButton" class="btn" style="background-color: #4f4a41 !important;">Edit</button>
   </div>
 <% } %>
 
@@ -33,17 +33,17 @@
     ></textarea>
   </div>
   <br>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn" id="buttons">Submit</button>
 </form>
 
 <% if (user.seeker?.skills) { %>
   <div class="skills-section border border-custom rounded">
     <label for="skills">Skills</label>
     <p><%= user.seeker.skills %></p>
-    <button id="skillsEditButton" class="btn btn-primary">Edit</button>
+    <button id="skillsEditButton" class="btn" style="background-color: #4f4a41 !important;">Edit</button>
   </div>
 <% } %>
-
+<br><br>
 <form id="skillsEditForm" <% if (!user.seeker?.skills) { %> action="/users/profile/update?_method=PUT" method="POST" <% } %> <% if (user.seeker?.skills ) { %> action="/users/profile/update" method="POST" <% } %> <% if (user.seeker?.skills) { %>style="display: none;"<% } %>>
   <div class="input-group border border-dark rounded">
     <textarea
@@ -74,7 +74,7 @@
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn" id="buttons">Submit</button>
 </form>
 
 <br><br>

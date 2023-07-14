@@ -76,7 +76,7 @@
             perfect addition to your team.Together, let's synchronize success!
           </p>
 
-          <p><a class="btn btn-lg" href="#" id="buttons">Sign up today</a></p>
+          <p><a class="btn btn-lg" href="/auth/google" id="buttons">Sign up today</a></p>
 
         </div>
       </div>
@@ -108,7 +108,7 @@
             aligns with your skills, aspirations, and growth potential.
           </p>
 
-          <p><a class="btn btn-lg" href="#" id="buttons">Learn more</a></p>
+          <p><a class="btn btn-lg" href="/jobs" id="buttons">View Jobs</a></p>
 
         </div>
       </div>
@@ -141,7 +141,7 @@
             high-performing team that drives your business forward.
           </p>
 
-          <p><a class="btn btn-lg " id="buttons">Browse gallery</a></p>
+          <p><a class="btn btn-lg " href="/users/seekers" id="buttons">Find Talent</a></p>
 
         </div>
       </div>
@@ -261,6 +261,8 @@
 
       </h3>
       <p class="lead"><%= jobs[randomJobs[0]].description %></p>
+      <a class="btn" href="/jobs/<%= jobs[randomJobs[0]]._id %>"
+        id="buttons">View details &raquo;</a>
     </div>
     <div class="col-md-5">
     <image
@@ -286,6 +288,8 @@
 
       </h3>
       <p class="lead"><%= jobs[randomJobs[1]].description %></p>
+      <a class="btn" href="/jobs/<%= jobs[randomJobs[1]]._id %>"
+        id="buttons">View details &raquo;</a>  
     </div>   
     <div class="col-md-5 order-md-1">
       <image
@@ -312,6 +316,8 @@
 
       </h3>
       <p class="lead"><%= jobs[randomJobs[2]].description %></p>
+      <a class="btn" href="/jobs/<%= jobs[randomJobs[2]]._id %>"
+        id="buttons">View details &raquo;</a>  
     </div>    
     <div class="col-md-5">
       <image
