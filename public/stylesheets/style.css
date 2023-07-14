@@ -66,9 +66,15 @@ h1 {
   color: #112d32;
 }
 
+.footer-container {
+  text-align: center;
 }
 
-.footer-container {
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
