@@ -22,4 +22,244 @@
     </p>
   </div>
 </div>
-<%- include('./partials/footer') %>
+
+<div
+  id="myCarousel"
+  class="carousel slide mb-6"
+  data-bs-ride="carousel"
+  data-bs-theme="light"
+>
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#myCarousel"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#myCarousel"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#myCarousel"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <svg
+        class="bd-placeholder-img"
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+      </svg>
+      <div class="container">
+        <div class="carousel-caption">
+          <h2>
+            SyncedIn: Your Gateway to Seamless Career Connections and
+            Synchronized Success
+          </h2>
+          <p class="opacity-75">
+            Welcome to SyncedIn, where job seekers and employers come together
+            for seamless career connections. <br />
+            Whether you're seeking your dream job or searching for the perfect
+            candidate, SyncedIn is here to synchronize your ambitions and
+            opportunities. <br />
+            At SyncedIn, we understand that finding the right job or the ideal
+            employee can be a daunting task. That's why we've created a platform
+            that harnesses the power of advanced technology and human expertise
+            to bring job seekers and employers into perfect alignment. <br />
+            We strive to create a harmonious synergy that leads to long-lasting
+            and fulfilling professional relationships. <br />
+            Let us help you find your next big career move or discover the
+            perfect addition to your team.Together, let's synchronize success!
+          </p>
+          <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <svg
+        class="bd-placeholder-img"
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+      </svg>
+      <div class="container">
+        <div class="carousel-caption">
+          <h2>
+            Empowering Your Career Journey: Discover Meaningful Opportunities
+            with SyncedIn
+          </h2>
+          <p>
+            At Synced, we are dedicated to helping job seekers like you find the
+            perfect opportunity. With our extensive network of reputable
+            employers, personalized guidance, and industry expertise, we connect
+            you with meaningful and fulfilling career prospects. Trust us to
+            navigate the job market with you, ensuring you land the job that
+            aligns with your skills, aspirations, and growth potential.
+          </p>
+          <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <svg
+        class="bd-placeholder-img"
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+      </svg>
+      <div class="container">
+        <div class="carousel-caption text-end">
+          <h2>
+            Transforming Recruitment: Unleash the Power of Exceptional Talent
+            Acquisition with SyncedIn
+          </h2>
+          <p>
+            At SyncedIn, we specialize in delivering exceptional recruiting
+            solutions tailored to your unique needs. Our team of experienced
+            recruiters utilizes cutting-edge technology and a comprehensive
+            network to identify and attract top talent for your organization.
+            With our streamlined processes, personalized approach, and
+            commitment to excellence, we will help you build a skilled and
+            high-performing team that drives your business forward.
+          </p>
+          <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#myCarousel"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#myCarousel"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div><%= jobs %></div>
+<div><%= users %></div>
+<div class="container marketing">
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-4">
+      <svg
+        class="bd-placeholder-img rounded-circle"
+        width="140"
+        height="140"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Placeholder"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <title>Placeholder</title>
+        <img
+          alt="avatar"
+          src="<%= users[0].avatar %>"
+          referrerpolicy="no-referrer"
+        />
+        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+      </svg>
+      <h2 class="fw-normal"><%= users[0].name %></h2>
+      <p><%= users[0].about %></p>
+      <p>
+        <a class="btn btn-secondary" href="/users/<%= users[0]._id %>"
+          >View details &raquo;</a
+        >
+      </p>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg
+        class="bd-placeholder-img rounded-circle"
+        width="140"
+        height="140"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Placeholder"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <img
+          alt="avatar"
+          src="<%= users[1].avatar %>"
+          referrerpolicy="no-referrer"
+        />
+        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+      </svg>
+      <h2 class="fw-normal"><%= users[1].name %></h2>
+      <p><%= users[1].about %></p>
+      <p>
+        <a class="btn btn-secondary" href="/users/<%= users[1]._id %>"
+          >View details &raquo;</a
+        >
+      </p>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg
+        class="bd-placeholder-img rounded-circle"
+        width="140"
+        height="140"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Placeholder"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <title>Placeholder</title>
+        <img
+          alt="avatar"
+          src="<%= users[2].avatar %>"
+          referrerpolicy="no-referrer"
+        />
+        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+      </svg>
+      <h2 class="fw-normal"><%= users[2].name %></h2>
+      <p><%= users[2].about %></p>
+      <p>
+        <a class="btn btn-secondary" href="/users/<%= users[1]._id %>"
+          >View details &raquo;</a
+        >
+      </p>
+    </div>
+    <!-- /.col-lg-4 -->
+  </div>
+  <!-- /.row -->
+
+  <%- include('./partials/footer') %>
+</div>
