@@ -66,9 +66,6 @@ h1 {
   color: #112d32;
 }
 
-.footer-container {
-  text-align: center;
-}
 
 .about-section {
   background-color: #6e6658;
@@ -84,4 +81,16 @@ h1 {
   padding: 10px;
   max-width: 400px;
   margin: 0 auto;
+}
+
+.custom-label {
+  background-color: #6e6658; /* Replace with your desired background color */
+  border: 1px solid #4f4a41; /* Replace with your desired border color and thickness */
+  padding: 5px; /* Adjust padding as needed */
+  display: inline-block; /* Keeps the label and input elements on the same line */
+  color: #112d32;
+}
+
+.footer-container {
+  text-align: center;
 }
