@@ -45,13 +45,14 @@
   </table>
   <br><br>
 
-  <% if (job.poster_id === user._id) { %>
-  <a href='/jobs/<%= job._id %>/edit' class="btn btn-primary">Edit Job</a>
-<br><br>
-  <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
-    <button type="submit" class="btn btn-danger">Delete Job</button>
-  </form>
+<% if (poster && user && poster._id.equals(user._id)) { %>
+      <a href='/jobs/<%= job._id %>/edit' class="btn btn-primary">Edit Job</a>
+    <br><br>
+    <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-danger">Delete Job</button>
+    </form>
   <% } %>
+
 
 
 
