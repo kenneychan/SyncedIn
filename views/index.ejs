@@ -12,7 +12,7 @@
   id="myCarousel"
   class="carousel slide mb-6"
   data-bs-ride="carousel"
-  data-bs-theme="light"
+
 >
   <div class="carousel-indicators">
     <button
@@ -47,7 +47,7 @@
         preserveAspectRatio="xMidYMid slice"
         focusable="false"
       >
-        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+        <!-- <rect width="100%" height="100%"/> -->
       </svg>
       <div class="container">
         <div class="carousel-caption">
@@ -55,7 +55,7 @@
             SyncedIn: Your Gateway to Seamless Career Connections and
             Synchronized Success
           </h2>
-          <p class="opacity-75">
+          <p >
             Welcome to SyncedIn, where job seekers and employers come together
             for seamless career connections. <br />
             Whether you're seeking your dream job or searching for the perfect
@@ -70,7 +70,7 @@
             Let us help you find your next big career move or discover the
             perfect addition to your team.Together, let's synchronize success!
           </p>
-          <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          <p><a class="btn btn-lg" href="#" id="buttons">Sign up today</a></p>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@
         preserveAspectRatio="xMidYMid slice"
         focusable="false"
       >
-        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+        <!-- <rect width="100%" height="100%"/> -->
       </svg>
       <div class="container">
         <div class="carousel-caption">
@@ -100,7 +100,7 @@
             navigate the job market with you, ensuring you land the job that
             aligns with your skills, aspirations, and growth potential.
           </p>
-          <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          <p><a class="btn btn-lg" href="#" id="buttons">Learn more</a></p>
         </div>
       </div>
     </div>
@@ -114,10 +114,10 @@
         preserveAspectRatio="xMidYMid slice"
         focusable="false"
       >
-        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+        <!-- <rect width="100%" height="100%" fill="var(--bs-secondary-color)" /> -->
       </svg>
       <div class="container">
-        <div class="carousel-caption text-end">
+        <div class="carousel-caption">
           <h2>
             Transforming Recruitment: Unleash the Power of Exceptional Talent
             Acquisition with SyncedIn
@@ -131,7 +131,7 @@
             commitment to excellence, we will help you build a skilled and
             high-performing team that drives your business forward.
           </p>
-          <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          <p><a class="btn btn-lg " id="buttons">Browse gallery</a></p>
         </div>
       </div>
     </div>
@@ -161,7 +161,7 @@
   <div class="row">
     <div class="col-lg-4">
       <image 
-      class="rounded-circle"
+      class="rounded-circle border-custom"
       alt="avatar"
       src="<%= users[0].avatar %>"
       referrerpolicy="no-referrer"
@@ -169,15 +169,15 @@
       <h2 class="fw-normal"><%= users[0].name %></h2>
       <p><%= users[0].about %></p>
       <p>
-        <a class="btn btn-secondary" href="/users/<%= users[0]._id %>"
-          >View details &raquo;</a
+        <a class="btn" href="/users/<%= users[0]._id %>"
+          id="buttons">View details &raquo;</a
         >
       </p>
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4">
       <image
-      class="rounded-circle"
+      class="rounded-circle border-custom"
       alt="avatar"
       src="<%= users[1].avatar %>"
       referrerpolicy="no-referrer"
@@ -185,24 +185,26 @@
       <h2 class="fw-normal"><%= users[1].name %></h2>
       <p><%= users[1].about %></p>
       <p>
-        <a class="btn btn-secondary" href="/users/<%= users[1]._id %>"
-          >View details &raquo;</a
+        <a class="btn" href="/users/<%= users[1]._id %>"
+          id="buttons" >View details &raquo;</a
         >
       </p>
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4">
       <image
-      class="rounded-circle"
+      id=""
+      class="rounded-circle border-custom"
       alt="avatar"
       src="<%= users[2].avatar %>"
       referrerpolicy="no-referrer"
+      
       />
       <h2 class="fw-normal"><%= users[2].name %></h2>
       <p><%= users[2].about %></p>
       <p>
-        <a class="btn btn-secondary" href="/users/<%= users[1]._id %>"
-          >View details &raquo;</a
+        <a class="btn btn-style" href="/users/<%= users[1]._id %>"
+          id="buttons" >View details &raquo;</a
         >
       </p>
     </div>
@@ -219,7 +221,7 @@
       <h2 class="featurette-heading fw-normal lh-1">
         <%= jobs[0].company %>
       </h2>
-      <h3><span class="text-body-secondary"><%= jobs[0].title %></p></span>
+      <h3><span><%= jobs[0].title %></p></span>
       </h3>
       <p class="lead"><%= jobs[0].description %></p>
     </div>
@@ -242,7 +244,7 @@
       <h2 class="featurette-heading fw-normal lh-1">
         <%= jobs[1].company %>
       </h2>
-      <h3><span class="text-body-secondary"><%= jobs[1].title %></p></span>
+      <h3><span><%= jobs[1].title %></p></span>
       </h3>
       <p class="lead"><%= jobs[1].description %></p>
     </div>    
@@ -274,7 +276,7 @@
       <h2 class="featurette-heading fw-normal lh-1">
         <%= jobs[2].company %>
       </h2>
-      <h3><span class="text-body-secondary"><%= jobs[2].title %></p></span>
+      <h3><span ><%= jobs[2].title %></p></span>
       </h3>
       <p class="lead"><%= jobs[2].description %></p>
     </div>    

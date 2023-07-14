@@ -9,11 +9,12 @@ body {
     Helvetica,
     Arial,
     sans-serif;
-  background-color: 0;
+  background-color: #254e58;
+  color: #88bdbc;
 }
 
 a {
-  color: #00b7ff;
+  color: #88bdbc;
 }
 
 .review-user {
@@ -28,9 +29,33 @@ a {
 }
 
 .carousel-caption p {
-  font-size: 1rem
+  font-size: 1rem;
+  text-align: center;
 }
 
 .navbar {
   border-radius: 5px;
+  background-color: #88bdbc;
+  color: #112d32;
+}
+
+#navcolor {
+  color: #112d32;
+}
+h1 {
+  color: #88bdbc;
+}
+
+.border-custom {
+  border: 2px solid #88bdbc;
+}
+
+.table > :not(caption) > * > * {
+  background-color: #6e6658;
+  border-color: #4f4a41;
+}
+
+#buttons {
+  background-color: #4f4a41;
+  color: #112d32;
 }
