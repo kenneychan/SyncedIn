@@ -1,7 +1,7 @@
 <%- include('../partials/header', { title: 'Job Details' }) %>
-
+<br>
 <h1>Job Details</h1>
-
+<br>
 <section id="show-page">
 
   <div class="card p-3 mb-2">
@@ -54,7 +54,7 @@
 
 
 <% if (poster && user && poster._id.equals(user._id)) { %>
-      <a href='/jobs/<%= job._id %>/edit' class="btn btn-primary">Edit Job</a>
+      <a href='/jobs/<%= job._id %>/edit' class="btn" id="buttons">Edit Job</a>
     <br><br>
     <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
       <button type="submit" class="btn btn-danger">Delete Job</button>
