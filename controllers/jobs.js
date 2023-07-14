@@ -64,11 +64,13 @@ async function show(req, res) {
     const job = await Job.findById(req.params.id);
     const poster = await User.findById(job.poster_id);
 
-    const heatmap = skillsMatching.match(user.seeker.skills, job.skills);
-    heatmap.map((skill) => {
-      skill.closeness = Math.ceil(100 * skill.closeness);
-    });
-
+    let heatmap;
+    if (user.seeker && user.seeker.skills && job.skills) {
+      heatmap = skillsMatching.match(user.seeker.skills, job.skills);
+      heatmap.map((skill) => {
+        skill.closeness = Math.ceil(100 * skill.closeness);
+      });
+    }
     res.render("jobs/show", { job, heatmap, user, poster });
   } catch (err) {
     console.log(err);
@@ -186,5 +188,4 @@ async function edit(req, res) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
   }
-
 }
