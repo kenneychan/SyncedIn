@@ -56,6 +56,28 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <br><br>
+
+<form action="/users/profile/update" method="POST">
+  <div class="form-group">
+    <label for="role">Choose Your Role:</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="role" id="roleSeeker" value="seeker" <% if (user.roleSeeker) { %>checked<% } %>>
+      <label class="form-check-label" for="roleSeeker">
+        Job Seeker
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="role" id="rolePoster" value="poster" <% if (user.rolePoster) { %>checked<% } %>>
+      <label class="form-check-label" for="rolePoster">
+        Employer
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<br><br>
+
 <form action="/users/profile/delete?_method=DELETE" method="POST">
   <button type="submit" class="btn btn-danger">Delete Profile</button>
 </form>

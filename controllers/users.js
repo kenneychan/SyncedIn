@@ -26,6 +26,7 @@ async function updateProfile(req, res) {
   const user = await User.findById(req.user._id);
   const about = req.body.about;
   const skills = req.body.skills;
+  const role = req.body.role;
 
   if (!user.seeker) {
     user.seeker = {};
@@ -37,6 +38,16 @@ async function updateProfile(req, res) {
 
   if (skills) {
     user.seeker.skills = skills;
+  }
+
+  if (role) {
+    if (role === "seeker") {
+      user.roleSeeker = true;
+      user.rolePoster = false;
+    } else if (role === "poster") {
+      user.roleSeeker = false;
+      user.rolePoster = true;
+    }
   }
 
   await user.save();
