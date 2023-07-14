@@ -27,4 +27,6 @@ router.put("/profile/update", ensureLoggedIn, usersCtrl.updateProfile);
 
 router.post("/profile/update", ensureLoggedIn, usersCtrl.updateProfile);
 
+router.delete("/profile/delete", ensureLoggedIn, usersCtrl.delete);
+
 module.exports = router;
