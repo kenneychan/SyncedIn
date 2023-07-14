@@ -25,3 +25,8 @@ a {
 .review-user img {
   border-radius: 50%;
   height: 40px;
+}
+
+.title {
+  font-weight: bold;
+}
