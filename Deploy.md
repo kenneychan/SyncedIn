@@ -78,7 +78,7 @@
   ```
 - Fix any deployment errors
 
-## Update latest changes after successful deploymentment
+## Update latest changes after success deployment
 
 - check in all updates to branch
   ```
