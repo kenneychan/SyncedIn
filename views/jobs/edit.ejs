@@ -1,22 +1,24 @@
 <%- include('../partials/header') %>
-
+<br /><br />
+<h1>Edit Job Listing</h1>
+<br />
 <form action="/jobs/<%= job._id %>?_method=PUT" method="POST">
     <label> Company: </label>
-    <input type="text" name="company" value="<%= job.company %>">
+    <input type="text" name="company" value="<%= job.company %>" class="custom-label"><br><br>
     <label> Image: </label>
-    <input type="text" name="image" value="<%= job.image %>"/>  
+    <input type="text" name="image" value="<%= job.image %>"class="custom-label">  <br><br>
     <label> Title: </label>
-    <input type="text" name="title" value="<%= job.title %>">
+    <input type="text" name="title" value="<%= job.title %>" class="custom-label"><br><br>
     <label>Description: </label>
-    <input type="text" name="description" value="<%= job.description %>">
+    <input type="text" name="description" value="<%= job.description %>" class="custom-label"><br><br>
     <label> Skills: </label>
-    <input type="text" name="skills" value="<%= job.skills %>">
+    <input type="text" name="skills" value="<%= job.skills %>" class="custom-label"><br><br>
     <label> Location: </label>
-    <input type="text" name="location" value="<%= job.location %>">
+    <input type="text" name="location" value="<%= job.location %>" class="custom-label"><br><br>
     <label>Start Date: </label>
-    <input type="text" name="startDate" value="<%= job.startDate %>">
+    <input type="text" name="startDate" value="<%= job.startDate %>" class="custom-label"><br><br>
     <label> Salary: </label>
-    <select name="wage">
+    <select name="wage" class="custom-label">
         <option value="$50,000-$75,000" <% if (job.wage === "$50,000-$75,000") { %>selected<% } %>>$50,000-$75,000</option>
         <option value="$75,000-$100,000" <% if (job.wage === "$75,000-$100,000") { %>selected<% } %>>$75,000-$100,000</option>
         <option value="$100,000-$125,000" <% if (job.wage === "$100,000-$125,000") { %>selected<% } %>>$100,000-$125,000</option>
@@ -24,8 +26,8 @@
         <option value="$150,000-$175,000" <% if (job.wage === "$150,000-$175,000") { %>selected<% } %>>$150,000-$175,000</option>
         <option value="$175,000-$200,000" <% if (job.wage === "$175,000-$200,000") { %>selected<% } %>>$175,000-$200,000</option>
         <option value="$200,000-$250,000+" <% if (job.wage === "$200,000-$250,000+") { %>selected<% } %>>$200,000-$250,000+</option>
-    </select> 
-    <button type="submit">Update Job</button>
+    </select> <br><br>
+    <button class="btn" id="buttons" type="submit">Update Job</button>
 </form>
 
 <%- include('../partials/footer') %>

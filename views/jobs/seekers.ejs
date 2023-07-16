@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
-
+<br><br>
 <blockquote class="blockquote text-center">
   <p class="mb-0">You're gonna like the person you hire, I guarantee it.</p>
   <br>
   <footer class="blockquote-footer">The Men's Warehouse guy, probably.</cite></footer>
-</blockquote>
+</blockquote><br><br>
+<h2 class="cent">List of Job Seekers</h2>
 <div class="container mt-5 mb-3">
-<table class="table table-hover table-primary rounded overflow-hidden" class="border border-primary">
-   <caption>List of Job Seekers</caption>
+<table class="table table-primary rounded overflow-hidden" class="border border-primary">
   <tbody>
     <% users.forEach (function (u) { %>
     <tr>
@@ -30,7 +30,7 @@
             ></div>
           </div>
       </td>
-      <td><a href="/users/<%= u._id %>/job/<%= job_id %>">Profile</a></td>
+      <td><a href="/users/<%= u._id %>/job/<%= job_id %>" id="buttons" class="btn">Profile</a></td>
 
     </tr>
     <% }) %>
