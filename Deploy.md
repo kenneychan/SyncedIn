@@ -40,7 +40,7 @@
   ```
 - Switch to browser and set up OAuth
   - [Log into Google OAuth Credential](https://console.cloud.google.com/)
-  - In upper left next to "Google Cloud", in drop down select
+  - In upper left next to "Google Cloud", in drop down select your project
   - Scroll down and click "APIs & Services" card
   - On left menu click "Credentials"
   - On Credentials panel under OAuth 2.0 Client IDs click "Web client 1"
