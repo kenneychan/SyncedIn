@@ -134,6 +134,11 @@ h5 {
   color: #112d32;
 }
 
+.job-image {
+  object-fit: contain;
+  max-width: 100%;
+}
+
 .banner {
   height: 200px;
   background-size: cover;
