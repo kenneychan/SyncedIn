@@ -90,3 +90,7 @@ body {
 #buttons {
   background-color: #4f4a41;
 }
+
+.carousel-indicators .active {
+  background-color: #112d32;
+}
