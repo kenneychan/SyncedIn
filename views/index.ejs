@@ -8,7 +8,7 @@
   
 
   <div class="position-absolute top-50 start-50 translate-middle p-3 p-md-5 m-md-3 text-center">
-    <h1 class="display-4 font-weight-bold text-white"><%= title %></h1>
+    <h1 class="display-4 font-weight-bold"><%= title %></h1>
   </div>
 </div>
 
@@ -166,7 +166,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
+<br><br><br><br><br><br>
 <div class="container marketing seekers">
   <!-- Three columns of text below the carousel -->
   <div class="row">
@@ -264,9 +264,9 @@
         id="buttons">View details &raquo;</a>
     </div>
     <div class="col-md-5">
-    <image class="job-image"
-      width="400"
-      height="400"
+    <image
+      width="300"
+      height="300"
       fill="var(--bs-secondary-bg)"
       alt="avatar"
       src="<%= randomJobs[0] != null ? jobs[randomJobs[0]].image:'' %>"
@@ -278,11 +278,10 @@
   <hr class="featurette-divider" />
 
   <div class="row featurette">
-    <div class="col-md-7  order-md-2">
+    <div class="col-md-7">
       <h2 class="featurette-heading fw-normal lh-1">
         <%= randomJobs[1] != null ? jobs[randomJobs[1]].company:'' %>
       </h2>
-
       <h3><span><%= randomJobs[1] != null ? jobs[randomJobs[1]].title:'' %></p></span>
 
       </h3>
@@ -292,8 +291,8 @@
     </div>   
     <div class="col-md-5 order-md-1">
       <image class="job-image"
-      width="400"
-      height="400"
+      width="300"
+      height="300"
       fill="var(--bs-secondary-bg)"
       alt="avatar"
       
@@ -302,6 +301,8 @@
     />   
     </div>
   </div>
+
+  <hr class="featurette-divider" />
 
   <hr class="featurette-divider" />
 
@@ -319,9 +320,9 @@
         id="buttons">View details &raquo;</a>  
     </div>    
     <div class="col-md-5">
-      <image class="job-image"
-      width="400"
-      height="400"
+      <image
+      width="300"
+      height="300"
       fill="var(--bs-secondary-bg)"
       alt="avatar"
       src="<%= randomJobs[2] != null ? jobs[randomJobs[2]].image:'' %>"

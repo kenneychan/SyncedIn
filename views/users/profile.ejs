@@ -12,7 +12,7 @@
 </div>
 <br /><br />
 
-<h2 class="h2 text-center">About</h2>
+<h2 class="h2">About</h2>
 
 <% if (user.about) { %>
   <div class="about-section border border-custom rounded">
@@ -60,7 +60,7 @@
 
 <form action="/users/profile/update" method="POST">
   <div class="form-group">
-    <label for="role">Choose Your Role:</label>
+    <label for="role">Choose Your Role:</label> <br><br>
     <div class="form-check">
       <input class="form-check-input" type="radio" name="role" id="roleSeeker" value="seeker" <% if (user.roleSeeker) { %>checked<% } %>>
       <label class="form-check-label" for="roleSeeker">

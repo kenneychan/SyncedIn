@@ -7,15 +7,16 @@
     <div class="row">
       <div class="col-md-6">
         <div class="details">
-          <div class="text-center">
+          <div>
             <img
-              class="img-fluid img-thumbnail"
+              class="img-fluidb img-thumbnail"
               alt="company image"
               src="<%= job.image %>"
               referrerpolicy="no-referrer"
               class="rounded-circle border border-custom"
             />
           </div>
+          <br />
 
           <div class="title">Company:</div>
           <div class="value"><%= job.company %></div>
@@ -30,8 +31,9 @@
           <div class="title">Description:</div>
           <div class="value"><%= job.description %></div>
         </div>
-      </div>
-      <div class="col-md-6">
+        <!-- </div> -->
+        <!-- <div class="col-md-6"> -->
+        <br />
         <div class="details">
           <div class="title">Skills Match:</div>
           <table
@@ -63,15 +65,17 @@
         </div>
       </div>
     </div>
+    <br />
+    <% if (poster && user && poster._id.equals(user._id)) { %>
+    <a href="/jobs/<%= job._id %>/edit" class="btn edit-button" id="buttons"
+      >Edit Job</a
+    >
+    <br />
+    <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn" id="buttons">Delete Job</button>
+    </form>
+    <% } %>
   </div>
-
-  <% if (poster && user && poster._id.equals(user._id)) { %>
-  <a href="/jobs/<%= job._id %>/edit" class="btn btn-primary">Edit Job</a>
-  <br /><br />
-  <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
-    <button type="submit" class="btn btn-danger">Delete Job</button>
-  </form>
-  <% } %>
 </section>
 
 <%- include('../partials/footer') %>

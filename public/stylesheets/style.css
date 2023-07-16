@@ -118,9 +118,7 @@ h1 {
 }
 
 h5 {
-  color: #112d32;
   margin-top: 5px;
-  text-align: center;
 }
 .blockquote {
   color: #112d32;
@@ -130,7 +128,19 @@ h5 {
 }
 
 #buttons:hover {
-  background-color: #88bdbc;
+  background-color: #112d32;
+  color: #4f4a41;
+}
+
+.col-md-5 img {
+  border: 2px solid #88bdbc;
+}
+
+.card {
+  background-color: #6e6658;
+}
+
+.badge {
   color: #112d32;
 }
 
@@ -149,4 +159,31 @@ h5 {
 
 .banner{  
   margin-top: 1em;
+}
+
+h6,
+h3,
+h4,
+h5 {
+  color: #112d32;
+}
+
+.progress,
+.progress-stacked {
+  background-color: #4f4a41;
+}
+
+.cent {
+  text-align: center;
+}
+
+.img-fluidb {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #88bdbc;
+  padding: 0%;
+}
+
+#buttons.btn.edit-button {
+  width: max-content;
 }
