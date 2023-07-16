@@ -175,7 +175,6 @@
       const numRandomSeekers = Math.min (users.length, 3)
       while (randomSeeker.length < numRandomSeekers) {
         const randomNum = Math.floor(Math.random() * users.length);
-        console.log('randomNum', randomNum)
         if (!randomSeeker.includes(randomNum)) {
           randomSeeker.push(randomNum);
         }
