@@ -3,7 +3,7 @@
 <div class="banner position-relative">
   <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Maui_banner.jpg" alt="Banner Image" class="img-fluid"> -->
   <!-- <img src="https://wikitravel.org/upload/shared//d/d9/New_Jersey_Banner.jpg" alt="Banner Image" class="img-fluid"> -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Hanauma_Bay_Hawaii_banner.jpg" alt="Banner Image" class="img-fluid">
+  <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Hanauma_Bay_Hawaii_banner.jpg" alt="Banner Image" class="img-fluid"> -->
   <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/2560px-Cidade_Maravilhosa.jpg" alt="Banner Image" class="img-fluid"> -->
   
 
@@ -172,10 +172,9 @@
   <div class="row">
     <div class="col-lg-4">
       <%   const randomSeeker = [];
-  
-      while (randomSeeker.length < 3) {
+      const numRandomSeekers = Math.min (users.length, 3)
+      while (randomSeeker.length < numRandomSeekers) {
         const randomNum = Math.floor(Math.random() * users.length);
-        
         if (!randomSeeker.includes(randomNum)) {
           randomSeeker.push(randomNum);
         }
@@ -184,14 +183,14 @@
       <image 
       class="rounded-circle border-custom"
       alt="avatar"
-      src="<%= users[randomSeeker[0]].avatar %>"
+      src="<%= randomSeeker[0] != null ? users[randomSeeker[0]].avatar:'' %>"
       referrerpolicy="no-referrer"
       />
-      <h2 class="fw-normal"><%= users[randomSeeker[0]].name %></h2>
-      <p><%= users[randomSeeker[0]].about %></p>
+      <h2 class="fw-normal"><%= randomSeeker[0] != null ? users[randomSeeker[0]].name:'' %></h2>
+      <p><%= randomSeeker[0] != null ? users[randomSeeker[0]].about:'' %></p>
       <p>
 
-        <a class="btn" href="/users/<%= users[randomSeeker[0]]._id %>"
+        <a class="btn" href="/users/<%= randomSeeker[0] != null ? users[randomSeeker[0]]._id:'' %>"
           id="buttons">View details &raquo;</a
 
         >
@@ -202,14 +201,14 @@
       <image
       class="rounded-circle border-custom"
       alt="avatar"
-      src="<%= users[randomSeeker[1]].avatar %>"
+      src="<%= randomSeeker[1] != null ? users[randomSeeker[1]].avatar:'' %>"
       referrerpolicy="no-referrer"
      />
-      <h2 class="fw-normal"><%= users[randomSeeker[1]].name %></h2>
-      <p><%= users[randomSeeker[1]].about %></p>
+      <h2 class="fw-normal"><%= randomSeeker[1] != null ? users[randomSeeker[1]].name:'' %></h2>
+      <p><%= randomSeeker[1] != null ? users[randomSeeker[1]].about:'' %></p>
       <p>
 
-        <a class="btn" href="/users/<%= users[randomSeeker[1]]._id %>"
+        <a class="btn" href="/users/<%= randomSeeker[1] != null ? users[randomSeeker[1]]._id:'' %>"
           id="buttons" >View details &raquo;</a
 
         >
@@ -221,14 +220,14 @@
       id=""
       class="rounded-circle border-custom"
       alt="avatar"
-      src="<%= users[randomSeeker[2]].avatar %>"
+      src="<%= randomSeeker[2] != null ? users[randomSeeker[2]].avatar:'' %>"
       referrerpolicy="no-referrer"
       
       />
-      <h2 class="fw-normal"><%= users[randomSeeker[2]].name %></h2>
-      <p><%= users[randomSeeker[2]].about %></p>
+      <h2 class="fw-normal"><%= randomSeeker[2] != null ? users[randomSeeker[2]].name:'' %></h2>
+      <p><%= randomSeeker[2] != null ? users[randomSeeker[2]].about:'' %></p>
       <p>
-        <a class="btn btn-style" href="/users/<%= users[1]._id %>"
+        <a class="btn btn-style" href="/users/<%= randomSeeker[2] != null ? users[randomSeeker[2]]._id:'' %>"
           id="buttons" >View details &raquo;</a
         >
       </p>
@@ -245,8 +244,8 @@
     <div class="col-md-7">
       <h2 class="featurette-heading fw-normal lh-1">
         <%   const randomJobs = [];
-  
-        while (randomJobs.length < 3) {
+        const numRandomJobs = Math.min (jobs.length, 3)
+        while (randomJobs.length < numRandomJobs) {
           const randomNum = Math.floor(Math.random() * jobs.length);
           
           if (!randomJobs.includes(randomNum)) {
@@ -254,14 +253,14 @@
           }
         };
         %>
-        <%= jobs[randomJobs[0]].company %>
+        <%= randomJobs[0] != null ? jobs[randomJobs[0]].company:'' %>
       </h2>
 
-      <h3><span><%= jobs[randomJobs[0]].title %></p></span>
+      <h3><span><%= randomJobs[0] != null ? jobs[randomJobs[0]].title:'' %></p></span>
 
       </h3>
-      <p class="lead"><%= jobs[randomJobs[0]].description %></p>
-      <a class="btn" href="/jobs/<%= jobs[randomJobs[0]]._id %>"
+      <p class="lead"><%= randomJobs[0] != null ? jobs[randomJobs[0]].description:'' %></p>
+      <a class="btn" href="/jobs/<%= randomJobs[0] != null ? jobs[randomJobs[0]]._id:'' %>"
         id="buttons">View details &raquo;</a>
     </div>
     <div class="col-md-5">
@@ -270,7 +269,7 @@
       height="300"
       fill="var(--bs-secondary-bg)"
       alt="avatar"
-      src="<%= jobs[randomJobs[0]].image %>"
+      src="<%= randomJobs[0] != null ? jobs[randomJobs[0]].image:'' %>"
       referrerpolicy="no-referrer"
     />   
     </div>
@@ -281,23 +280,23 @@
   <div class="row featurette">
     <div class="col-md-7">
       <h2 class="featurette-heading fw-normal lh-1">
-        <%= jobs[randomJobs[1]].company %>
+        <%= randomJobs[1] != null ? jobs[randomJobs[1]].company:'' %>
       </h2>
-
-      <h3><span ><%= jobs[randomJobs[1]].title %></p></span>
+      <h3><span><%= randomJobs[1] != null ? jobs[randomJobs[1]].title:'' %></p></span>
 
       </h3>
-      <p class="lead"><%= jobs[randomJobs[2]].description %></p>
-      <a class="btn" href="/jobs/<%= jobs[randomJobs[1]]._id %>"
+      <p class="lead"><%= randomJobs[1] != null ? jobs[randomJobs[1]].description:'' %></p>
+      <a class="btn" href="/jobs/<%= randomJobs[1] != null ? jobs[randomJobs[1]]._id:'' %>"
         id="buttons">View details &raquo;</a>  
-    </div>    
-    <div class="col-md-5">
-      <image
+    </div>   
+    <div class="col-md-5 order-md-1">
+      <image class="job-image"
       width="300"
       height="300"
       fill="var(--bs-secondary-bg)"
       alt="avatar"
-      src="<%= jobs[randomJobs[1]].image %>"
+      
+      src="<%= randomJobs[1] != null ? jobs[randomJobs[1]].image:'' %>"
       referrerpolicy="no-referrer"
     />   
     </div>
@@ -310,14 +309,14 @@
   <div class="row featurette">
     <div class="col-md-7">
       <h2 class="featurette-heading fw-normal lh-1">
-        <%= jobs[randomJobs[2]].company %>
+        <%= randomJobs[2] != null ? jobs[randomJobs[2]].company:'' %>
       </h2>
 
-      <h3><span ><%= jobs[randomJobs[2]].title %></p></span>
+      <h3><span ><%= randomJobs[2] != null ? jobs[randomJobs[2]].title:'' %></p></span>
 
       </h3>
-      <p class="lead"><%= jobs[randomJobs[2]].description %></p>
-      <a class="btn" href="/jobs/<%= jobs[randomJobs[2]]._id %>"
+      <p class="lead"><%= randomJobs[2] != null ? jobs[randomJobs[2]].description:'' %></p>
+      <a class="btn" href="/jobs/<%= randomJobs[2] != null ? jobs[randomJobs[2]]._id:'' %>"
         id="buttons">View details &raquo;</a>  
     </div>    
     <div class="col-md-5">
@@ -326,7 +325,7 @@
       height="300"
       fill="var(--bs-secondary-bg)"
       alt="avatar"
-      src="<%= jobs[randomJobs[2]].image %>"
+      src="<%= randomJobs[2] != null ? jobs[randomJobs[2]].image:'' %>"
       referrerpolicy="no-referrer"
     />   
     </div>
