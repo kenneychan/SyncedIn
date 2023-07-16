@@ -83,7 +83,7 @@
 - check in all updates to branch
   ```
   git add .
-  git push commit -m "comment"
+  git commit -m "comment"
   ```
 - push your branch to heroku, look for errors
   ```
