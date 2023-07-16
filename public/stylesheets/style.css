@@ -145,3 +145,7 @@ h5 {
   /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/2560px-Cidade_Maravilhosa.jpg"); */
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/52/Hanauma_Bay_Hawaii_banner.jpg");
 }
+
+.banner{  
+  margin-top: 1em;
+}
