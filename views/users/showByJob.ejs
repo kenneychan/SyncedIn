@@ -22,7 +22,7 @@
 <h2 class="h2">Seeker Skills</h2>
 
 <div>
-  <p><%= user.seeker.skills.split(',') %></p>
+  <p><%= (user.seeker && user.seeker.skills)? user.seeker.skills: '' %></p>
 </div>
 
 <h2 class="h2">Job: <%= job.title %></h2>
