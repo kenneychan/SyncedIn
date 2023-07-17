@@ -31,6 +31,10 @@
           <div class="title">Description:</div>
           <div class="value"><%= job.description %></div>
         </div>
+        <% if (chatGPTResponse) { %>
+        <div class="title">Based on Skills Match</div>
+        <div class="value"><%= chatGPTResponse %></div>
+        <%}%>
         <!-- </div> -->
         <!-- <div class="col-md-6"> -->
         <br />

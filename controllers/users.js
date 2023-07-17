@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const Job = require("../models/job");
 const skillsMatching = require("./utils/skillsMatching");
+const openai = require("./utils/openai");
 
 const Seeker = require("../models/seeker");
 
@@ -79,11 +80,17 @@ async function showByJob(req, res) {
     heatmap.map((skill) => {
       skill.closeness = Math.ceil(100 * skill.closeness);
     });
+    // console.log("req.openai **", req.openai);
+    const prompt = `From 1 to 100, how closely do these job seeker skills '${user.seeker.skills}' match these job skills '${job.skills}'`;
+    console.log("prompt", prompt);
+    const chatGPTResponse = await openai.chatGPT(req.openai, prompt);
+    // console.log("chatGPTResponse", chatGPTResponse);
     res.render("users/showByJob", {
       title: "User Details by Job",
       heatmap,
       job,
       user,
+      chatGPTResponse,
     });
   }
 }

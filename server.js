@@ -6,15 +6,20 @@ var logger = require("morgan");
 var session = require("express-session");
 var passport = require("passport");
 var methodOverride = require("method-override");
+const { Configuration, OpenAIApi } = require("openai");
 
 require("dotenv").config();
 // connect to the database with AFTER the config vars are processed
 require("./config/database");
 require("./config/passport");
+const configuration = new Configuration({
+  apiKey: process.env.OPEN_AI_KEY,
+});
+const openai = new OpenAIApi(configuration);
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var jobsRouter = require('./routes/jobs');
+var jobsRouter = require("./routes/jobs");
 
 var app = express();
 
@@ -43,6 +48,11 @@ app.use(passport.session());
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
   res.locals.user = req.user;
+  next();
+});
+// console.log("openai", openai);
+app.use(function (req, res, next) {
+  req.openai = openai;
   next();
 });
 

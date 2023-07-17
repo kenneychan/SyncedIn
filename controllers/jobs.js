@@ -2,6 +2,7 @@ const { use } = require("passport");
 const Job = require("../models/job");
 const User = require("../models/user");
 const skillsMatching = require("./utils/skillsMatching");
+const openai = require("./utils/openai");
 
 module.exports = {
   index,
@@ -65,13 +66,21 @@ async function show(req, res) {
     const poster = await User.findById(job.poster_id);
 
     let heatmap;
+    let chatGPTResponse;
     if (user.seeker && user.seeker.skills && job.skills) {
       heatmap = skillsMatching.match(user.seeker.skills, job.skills);
       heatmap.map((skill) => {
         skill.closeness = Math.ceil(100 * skill.closeness);
       });
+
+      // console.log("req.openai **", req.openai);
+      const prompt = `From 1 to 100, how closely do these job seeker skills '${user.seeker.skills}' match these job skills '${job.skills}'`;
+      console.log("prompt", prompt);
+      chatGPTResponse = await openai.chatGPT(req.openai, prompt);
+      // console.log("chatGPTResponse", chatGPTResponse);
     }
-    res.render("jobs/show", { job, heatmap, user, poster });
+
+    res.render("jobs/show", { job, heatmap, user, poster, chatGPTResponse });
   } catch (err) {
     console.log(err);
     res.render("error", { message: err.message, error: err });
