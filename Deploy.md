@@ -55,7 +55,7 @@
   heroku config:set DATABASE_URL="<whatever is in your .env file>"
   heroku config:set GOOGLE_CLIENT_ID="<whatever is in your .env file>"
   heroku config:set GOOGLE_SECRET="<whatever is in your .env file>"
-  heroku config:set GOOGLE_CALLBACK="<whatever is in your .env file>"
+  heroku config:set GOOGLE_CALLBACK="<copy URI oauth2callback you entered in Google OAuth setp>"
   heroku config:set SECRET="<whatever is in your .env file>"
   ```
   - Add any other environment variables needed for your app to run other than Port
