@@ -48,15 +48,15 @@ Employer
 ![Image](/public/images/SyncedIn.png)
 
 ## Technology Used
-[Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-Express
-Node.js
-MongoDb
-Mongoose
-OpenAI
+* [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+* Express
+* Node.js
+* MongoDb
+* Mongoose
+* OpenAI
 
 ## Next Steps
 
-Complete ChatGPT integration
-Fix profile edit error
-Move script.js to profile page, instead of deferring in header
+* Complete ChatGPT integration
+* Fix profile edit error
+* Move script.js to profile page, instead of deferring in header
