@@ -15,25 +15,25 @@ SyncedIn is a full stack application that helps match job seekers and employers 
 
 User Stories:
 JobSeeker
-As a job seeker I want to retrieve a list of available job postings that match my skills. (Sort list by matching skills)
-View details of Job from list
-Create a profile to showcase my skills
-Update profile to maintain up to date info.
-Delete profile to comply with GDPR
+* As a job seeker I want to retrieve a list of available job postings that match my skills. (Sort list by matching skills)
+* View details of Job from list
+* Create a profile to showcase my skills
+* Update profile to maintain up to date info.
+* Delete profile to comply with GDPR
 
 
 Employer
-As an employer I want to retrieve a list of job seekers to explore potential matches and gain insights into the available talent pool. (Sort list by matching skills)
-View details of job seekers from list.
-Create a job listing to advertise opportunities.
-Update job listing to maintain up to date info.
-Delete job listing.
+* As an employer I want to retrieve a list of job seekers to explore potential matches and gain insights into the available talent pool. (Sort list by matching skills)
+* View details of job seekers from list.
+* Create a job listing to advertise opportunities.
+* Update job listing to maintain up to date info.
+* Delete job listing.
 
 ## Screenshots
 
 ![Image](/public/images/home.png)
-![Image](/public/images/profile.png.png)
-![Image](/public/images/jobspagae.png.png)
+![Image](/public/images/profile.png)
+![Image](/public/images/jobspagae.png)
 
 ## Wireframes
 
