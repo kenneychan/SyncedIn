@@ -29,6 +29,11 @@ Create a job listing to advertise opportunities.
 Update job listing to maintain up to date info.
 Delete job listing.
 
+## Screenshots
+
+![Image](/public/images/home.png)
+![Image](/public/images/profile.png.png)
+![Image](/public/images/jobspagae.png.png)
 
 ## Wireframes
 
@@ -47,3 +52,11 @@ Delete job listing.
 Express
 Node.js
 MongoDb
+Mongoose
+OpenAI
+
+## Next Steps
+
+Complete ChatGPT integration
+Fix profile edit error
+Move script.js to profile page, instead of deferring in header
