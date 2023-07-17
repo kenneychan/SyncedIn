@@ -81,7 +81,7 @@ async function showByJob(req, res) {
       skill.closeness = Math.ceil(100 * skill.closeness);
     });
     // console.log("req.openai **", req.openai);
-    const prompt = `From 1 to 100, how closely do these job seeker skills '${user.seeker.skills}' match these job skills '${job.skills}'`;
+    const prompt = `How closely do these job seeker skills: (${user.seeker.skills}) match these job skills: (${job.skills})`;
     console.log("prompt", prompt);
     const chatGPTResponse = await openai.chatGPT(req.openai, prompt);
     // console.log("chatGPTResponse", chatGPTResponse);
