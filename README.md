@@ -1,4 +1,4 @@
-# <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7832288/refresh-icon-md.png" alt="SyncedIn Logo" width="30"/> SyncedIn 
+# ![Image](/public/images/sync-32b.png) SyncedIn 
 
 ## Application Link
 
