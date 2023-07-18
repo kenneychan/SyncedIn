@@ -50,7 +50,7 @@
   - Need to hit return/enter key
   - Click "SAVE"
   - Wait for an 5 minutes to a few hours
-- Back to VS Code terminal. Add all environment variables from .env to Heroku app, do NOT add Port
+- Back to VS Code **TERMINAL**. Add all environment variables from .env to Heroku app, do NOT add Port
   ```
   heroku config:set DATABASE_URL="<whatever is in your .env file>"
   heroku config:set GOOGLE_CLIENT_ID="<whatever is in your .env file>"
